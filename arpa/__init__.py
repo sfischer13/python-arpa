@@ -29,15 +29,17 @@ It may be imported directly:
 The library was initiated by Stefan Fischer and is developed and maintained by many others.
 """
 
-__all__ = []
+from .arpa import dump, dumpf, dumps, load, loadf, loads
 
-__author__ = 'Stefan Fischer'
-__author_email__ = 'sfischer13@ymail.com'
-__authors__ = ['Stefan Fischer']
-__copyright__ = 'Copyright (c) 2015 Stefan Fischer'
+__all__ = ["dump dumpf dumps load loadf loads".split()]
+
+__author__ = "Stefan Fischer"
+__author_email__ = "sfischer13@ymail.com"
+__authors__ = ["Stefan Fischer"]
+__copyright__ = "Copyright (c) 2015 Stefan Fischer"
 __credits__ = []
-__date__ = '2015-07-04'
-__license__ = 'MIT'
-__status__ = 'development'
-__url__ = 'https://github.com/sfischer13/python-arpa/'
-__version__ = '0.1.0'
+__date__ = "2015-07-04"
+__license__ = "MIT"
+__status__ = "development"
+__url__ = "https://github.com/sfischer13/python-arpa/"
+__version__ = "0.1.0"
