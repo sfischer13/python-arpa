@@ -2,4 +2,3 @@ Authors
 =======
 
 -   Stefan Fischer
-
