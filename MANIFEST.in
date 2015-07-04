@@ -1,8 +1,4 @@
-global-exclude *.md
-global-exclude *.pyc
-global-exclude *.pyo
-global-exclude *~
-global-exclude __pycache__
-
 include *.rst
+include *.txt
+include LICENSE
 include tox.ini

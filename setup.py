@@ -1,29 +1,32 @@
 #!/usr/bin/env python3
 
-from setuptools import find_packages, setup
+import os.path
+from setuptools import find_packages
+from setuptools import setup
 
-import arpa
 
-readme = open("README.rst").read()
-authors = open("AUTHORS.rst").read()
-changelog = open("CHANGELOG.rst").read()
+def read(name):
+    path = os.path.join(os.path.dirname(__file__), name)
+    with open(path) as f:
+        return f.read()
+
 
 setup(
     name="arpa",
-    version=arpa.__version__,
-    author=arpa.__author__,
-    author_email=arpa.__author_email__,
-    url=arpa.__url__,
-    license=arpa.__license__,
-    description=arpa.__doc__.strip().split("\n")[0],
-    long_description=("\n\n".join([readme, authors, changelog])),
+    version="0.1.0",
+    author="Stefan Fischer",
+    author_email="sfischer13@ymail.com",
+    url="https://github.com/sfischer13/python-arpa/",
+    license="MIT",
+    description="This is a library for reading ARPA n-gram models.",
+    long_description=read("README.rst"),
     keywords="ARPA n-gram ngram language model LM language technology LT "
     "natural language processing NLP",
     install_requires=[],
-    packages=find_packages("arpa"),
-    package_dir={"": "arpa"},
+    packages=find_packages("src"),
+    package_dir={"": "src"},
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
@@ -37,4 +40,5 @@ setup(
         "Topic :: Text Processing",
         "Topic :: Text Processing :: Linguistic"
     ],
-    zip_safe=False)
+    test_suite="nose.collector",
+    zip_safe=True)
