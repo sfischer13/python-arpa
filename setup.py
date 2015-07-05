@@ -13,7 +13,7 @@ def read(name):
 
 setup(
     name="arpa",
-    version="0.1.0a1",
+    version="0.1.0a2",
     author="Stefan Fischer",
     author_email="sfischer13@ymail.com",
     url="https://github.com/sfischer13/python-arpa/",
@@ -33,6 +33,7 @@ setup(
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3.2",
         "Programming Language :: Python :: 3.3",
         "Programming Language :: Python :: 3.4",
         "Topic :: Software Development :: Libraries",
