@@ -24,7 +24,7 @@ The package is available on `PyPI <https://pypi.python.org/arpa>`__:
     $ pip install arpa
 
 | Python 3.3+ is required: |PyPI Python Versions|
-| Wheels are not yet supported: |PyPI Wheel|
+| Wheels are supported: |PyPI Wheel|
 
 Use
 ---
