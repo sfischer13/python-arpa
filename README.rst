@@ -17,13 +17,14 @@ Python ARPA Package
 Install
 -------
 
-The package is available on `PyPI <https://pypi.python.org/arpa>`__:
+The package is available on
+`PyPI <https://pypi.python.org/pypi/arpa>`__:
 
 ::
 
     $ pip install arpa
 
-| Python 3.3+ is required: |PyPI Python Versions|
+| Python 3.2+ is required: |PyPI Python Versions|
 | Wheels are supported: |PyPI Wheel|
 
 Use
@@ -59,14 +60,14 @@ License |License|
 | See `LICENSE <LICENSE>`__ for further details.
 
 .. |PyPI Version| image:: https://img.shields.io/pypi/v/arpa.svg
-   :target: https://pypi.python.org/arpa
+   :target: https://pypi.python.org/pypi/arpa
 .. |PyPI Downloads| image:: https://img.shields.io/pypi/dm/arpa.svg
-   :target: https://pypi.python.org/arpa
+   :target: https://pypi.python.org/pypi/arpa
 .. |Travis| image:: https://img.shields.io/travis/sfischer13/python-arpa.svg
    :target: https://travis-ci.org/sfischer13/python-arpa
 .. |PyPI Python Versions| image:: https://img.shields.io/pypi/pyversions/arpa.svg
-   :target: https://pypi.python.org/arpa
+   :target: https://pypi.python.org/pypi/arpa
 .. |PyPI Wheel| image:: https://img.shields.io/pypi/wheel/arpa.svg
-   :target: https://pypi.python.org/arpa
+   :target: https://pypi.python.org/pypi/arpa
 .. |License| image:: https://img.shields.io/github/license/sfischer13/python-arpa.svg
    :target: LICENSE
