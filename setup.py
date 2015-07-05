@@ -22,7 +22,7 @@ setup(
     long_description=read("README.rst"),
     keywords="ARPA n-gram ngram language model LM language technology LT "
     "natural language processing NLP",
-    install_requires=[],
+    install_requires=["enum34"],
     packages=find_packages("src"),
     package_dir={"": "src"},
     classifiers=[

@@ -1,4 +1,7 @@
-from enum import Enum, unique
+try:
+    from enum import Enum, unique
+except ImportError:
+    from enum34 import Enum, unique
 import re
 
 from ..exceptions import ParseException
