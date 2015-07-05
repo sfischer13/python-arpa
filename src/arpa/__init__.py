@@ -40,4 +40,4 @@ __credits__ = []
 __date__ = "2015-07-05"
 __license__ = "MIT"
 __status__ = "development"
-__version__ = "0.1.0"
+__version__ = "0.1.0a1"
