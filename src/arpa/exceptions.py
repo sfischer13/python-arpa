@@ -2,9 +2,10 @@
 
 
 class ARPAException(Exception):
-    """Base exception that is never raised."""
+    """Common base class for all package exceptions."""
     pass
 
 
 class ParseException(ARPAException):
+    """ARPA file could not be parsed."""
     pass
