@@ -22,9 +22,14 @@
 """
 This is a library for reading ARPA n-gram models.
 
-It may be imported directly:
+The package may be imported directly::
 
     import arpa
+
+Details about the ARPA n-gram format can be found here:
+
+- `SRILM <http://www.speech.sri.com/projects/srilm/manpages/ngram-format.5.html>`_
+- `ICSI Speech <http://www1.icsi.berkeley.edu/Speech/faq/grammarfmts.html>`_
 
 The library was initiated by Stefan Fischer and is developed and maintained by many others.
 """
