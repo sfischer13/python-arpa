@@ -15,15 +15,7 @@ class ARPAModel(metaclass=ABCMeta):
         pass
 
     def log10_p(self, ngram):
-        if not ngram:
-            raise ValueError
-        elif isinstance(ngram, str):
-            ngram = self._str2tuple(ngram)
-        elif isinstance(ngram, list):
-            ngram = tuple(ngram)
-        elif not isinstance(ngram, tuple):
-            raise ValueError
-
+        ngram = self._check_input(ngram)
         try:
             return self._log10_p(ngram)
         except KeyError:
@@ -33,8 +25,15 @@ class ARPAModel(metaclass=ABCMeta):
                 log10_bo = 0
             return log10_bo + self.log10_p(ngram[1:])
 
+    def log10_s(self, sentence):
+        words = self._check_input(sentence)
+        return sum(self.log10_p(words[:i]) for i in range(1, len(words) + 1))
+
     def p(self, ngram):
         return 10 ** self.log10_p(ngram)
+
+    def s(self, sentence):
+        return 10 ** self.log10_s(sentence)
 
     @abstractmethod
     def _log10_bo(self, ngram):
@@ -45,5 +44,14 @@ class ARPAModel(metaclass=ABCMeta):
         pass
 
     @staticmethod
-    def _str2tuple(s):
-        return tuple(s.strip().split(" "))
+    def _check_input(input):
+        if not input:
+            raise ValueError
+        elif isinstance(input, tuple):
+            return input
+        elif isinstance(input, list):
+            return tuple(input)
+        elif isinstance(input, str):
+            return tuple(input.strip().split(" "))
+        else:
+            raise ValueError
