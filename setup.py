@@ -13,7 +13,7 @@ def read(name):
 
 setup(
     name="arpa",
-    version="0.1.0a2",
+    version="0.1.0a3",
     author="Stefan Fischer",
     author_email="sfischer13@ymail.com",
     url="https://github.com/sfischer13/python-arpa/",
