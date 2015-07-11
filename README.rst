@@ -1,7 +1,7 @@
 Python ARPA Package
 ===================
 
-|PyPI Version| |PyPI Downloads| |Travis|
+|PyPI Version| |PyPI Downloads| |Travis| |Coverage Status|
 
 | This is a library for reading ARPA n-gram models.
 | It was initiated by Stefan Fischer and is developed and maintained by
@@ -65,6 +65,8 @@ License |License|
    :target: https://pypi.python.org/pypi/arpa
 .. |Travis| image:: https://img.shields.io/travis/sfischer13/python-arpa.svg
    :target: https://travis-ci.org/sfischer13/python-arpa
+.. |Coverage Status| image:: https://coveralls.io/repos/sfischer13/python-arpa/badge.svg?branch=master&service=github
+   :target: https://coveralls.io/github/sfischer13/python-arpa?branch=master
 .. |PyPI Python Versions| image:: https://img.shields.io/pypi/pyversions/arpa.svg
    :target: https://pypi.python.org/pypi/arpa
 .. |PyPI Wheel| image:: https://img.shields.io/pypi/wheel/arpa.svg
