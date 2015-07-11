@@ -1,9 +1,18 @@
 language: python
-python:
-  - "3.2"
-  - "3.3"
-  - "3.4"
+
+branches:
+  only:
+    - master
+
+env:
+  - TOXENV=py32
+  - TOXENV=py33
+  - TOXENV=py34
+  - TOXENV=coverage
+
 install:
   - pip install .
   - pip install -r requirements.txt
-script: nosetests
+
+script:
+  - tox -v -e $TOX_ENV
