@@ -13,6 +13,7 @@ env:
 install:
   - pip install .
   - pip install -r requirements.txt
+  - pip install tox
 
 script:
   - tox -v -e $TOX_ENV
