@@ -6,6 +6,9 @@ class ARPAModel(metaclass=ABCMeta):
     def __init__(self):
         pass
 
+    def __contains__(self, word):
+        return word in self.vocabulary()
+
     @abstractmethod
     def add_count(self, order, count):
         pass
@@ -36,6 +39,9 @@ class ARPAModel(metaclass=ABCMeta):
         return 10 ** self.log10_s(sentence)
 
     @abstractmethod
+    def vocabulary(self):
+        pass
+
     def _log10_bo(self, ngram):
         pass
 
