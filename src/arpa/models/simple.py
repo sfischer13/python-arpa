@@ -17,7 +17,7 @@ class ARPAModelSimple(ARPAModel):
             self._bos[key] = bo
 
     def vocabulary(self):
-        return sorted(word for ngram in self._ps.keys() for word in ngram)
+        return sorted(set(word for ngram in self._ps.keys() for word in ngram))
 
     def _log10_bo(self, ngram):
         return self._bos[ngram]
