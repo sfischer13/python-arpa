@@ -39,9 +39,33 @@ class ARPAModel(metaclass=ABCMeta):
         return 10 ** self.log10_s(sentence)
 
     @abstractmethod
+    def counts(self):
+        pass
+
+    @abstractmethod
     def vocabulary(self):
         pass
 
+    def write(self, fp):
+        fp.write("\\data\\\n")
+        for order, count in self.counts():
+            fp.write("ngram {}={}\n".format(order, count))
+        fp.write("\n")
+        for order, _ in self.counts():
+            fp.write("\\{}-grams:\n".format(order))
+            for e in self._entries(order):
+                fp.write("{}\t{}".format(e[0], " ".join(e[1])))
+                if len(e) == 3:
+                    fp.write("\t{}".format(e[2]))
+                fp.write("\n")
+            fp.write("\n")
+        fp.write("\\end\\\n")
+
+    @abstractmethod
+    def _entries(self, order):
+        pass
+
+    @abstractmethod
     def _log10_bo(self, ngram):
         pass
 

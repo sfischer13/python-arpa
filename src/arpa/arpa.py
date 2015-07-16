@@ -6,8 +6,7 @@ from .parsers.quick import ARPAParserQuick
 
 def dump(obj, fp):
     """Serialize obj to fp (a file-like object) in ARPA format."""
-    raise NotImplementedError
-    # TODO: obj.write(fp)
+    obj.write(fp)
 
 
 def dumpf(obj, path, mode="wt", encoding=None):
