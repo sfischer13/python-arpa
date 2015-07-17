@@ -1,11 +1,13 @@
+from collections import OrderedDict
+
 from .base import ARPAModel
 
 
 class ARPAModelSimple(ARPAModel):
     def __init__(self):
-        self._counts = {}
-        self._ps = {}
-        self._bos = {}
+        self._counts = OrderedDict()
+        self._ps = OrderedDict()
+        self._bos = OrderedDict()
 
     def add_count(self, order, count):
         self._counts[order] = count
