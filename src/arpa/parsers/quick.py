@@ -57,7 +57,7 @@ class ARPAParserQuick(ARPAParser):
         if match:
             order = match.group(1)
             count = match.group(2)
-            self._tmp_model.add_count(order, count)
+            self._tmp_model.add_count(int(order), int(count))
         elif not line:
             self._state = self.State.HEADER  # there are no counts
         else:
