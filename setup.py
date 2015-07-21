@@ -21,7 +21,7 @@ setup(
     description="This is a library for reading ARPA n-gram models.",
     long_description=read("README.rst"),
     keywords="ARPA n-gram ngram language model LM language technology LT "
-    "computational linguistics CL natural language processing NLP",
+    "computational linguistics CL natural language processing NLP unigram bigram trigram",
     install_requires=["enum34"],
     packages=find_packages("src"),
     package_dir={"": "src"},
@@ -38,6 +38,9 @@ setup(
         "Programming Language :: Python :: 3.2",
         "Programming Language :: Python :: 3.3",
         "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: Implementation",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Programming Language :: Python :: Implementation :: PyPy",
         "Topic :: Scientific/Engineering",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
         "Topic :: Software Development :: Libraries",
