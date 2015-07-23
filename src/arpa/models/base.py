@@ -43,6 +43,10 @@ class ARPAModel(metaclass=ABCMeta):
         pass
 
     @abstractmethod
+    def order(self):
+        pass
+
+    @abstractmethod
     def vocabulary(self):
         pass
 

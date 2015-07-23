@@ -21,6 +21,9 @@ class ARPAModelSimple(ARPAModel):
     def counts(self):
         return sorted(self._counts.items())
 
+    def order(self):
+        return max(self._counts.keys())
+
     def vocabulary(self):
         return sorted(set(word for ngram in self._ps.keys() for word in ngram))
 
