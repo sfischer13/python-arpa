@@ -5,6 +5,7 @@ from .base import ARPAModel
 
 class ARPAModelSimple(ARPAModel):
     def __init__(self):
+        super().__init__()
         self._counts = OrderedDict()
         self._ps = OrderedDict()
         self._bos = OrderedDict()
@@ -36,8 +37,8 @@ class ARPAModelSimple(ARPAModel):
         else:
             return self._ps[ngram], ngram
 
-    def _log10_bo(self, ngram):
+    def _log_bo(self, ngram):
         return self._bos[ngram]
 
-    def _log10_p(self, ngram):
+    def _log_p(self, ngram):
         return self._ps[ngram]

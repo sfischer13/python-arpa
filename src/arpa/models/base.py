@@ -2,9 +2,8 @@ from abc import ABCMeta, abstractmethod
 
 
 class ARPAModel(metaclass=ABCMeta):
-    @abstractmethod
     def __init__(self):
-        pass
+        self._base = 10
 
     def __contains__(self, word):
         return word in self.vocabulary()
@@ -17,26 +16,26 @@ class ARPAModel(metaclass=ABCMeta):
     def add_entry(self, ngram, p, bo=None, order=None):
         pass
 
-    def log10_p(self, ngram):
+    def log_p(self, ngram):
         ngram = self._check_input(ngram)
         try:
-            return self._log10_p(ngram)
+            return self._log_p(ngram)
         except KeyError:
             try:
-                log10_bo = self._log10_bo(ngram[:-1])
+                log_bo = self._log_bo(ngram[:-1])
             except KeyError:
-                log10_bo = 0
-            return log10_bo + self.log10_p(ngram[1:])
+                log_bo = 0
+            return log_bo + self.log_p(ngram[1:])
 
-    def log10_s(self, sentence):
+    def log_s(self, sentence):
         words = self._check_input(sentence)
-        return sum(self.log10_p(words[:i]) for i in range(1, len(words) + 1))
+        return sum(self.log_p(words[:i]) for i in range(1, len(words) + 1))
 
     def p(self, ngram):
-        return 10 ** self.log10_p(ngram)
+        return self._base ** self.log_p(ngram)
 
     def s(self, sentence):
-        return 10 ** self.log10_s(sentence)
+        return self._base ** self.log_s(sentence)
 
     @abstractmethod
     def counts(self):
@@ -70,11 +69,11 @@ class ARPAModel(metaclass=ABCMeta):
         pass
 
     @abstractmethod
-    def _log10_bo(self, ngram):
+    def _log_bo(self, ngram):
         pass
 
     @abstractmethod
-    def _log10_p(self, ngram):
+    def _log_p(self, ngram):
         pass
 
     @staticmethod
