@@ -8,6 +8,9 @@ class ARPAModel(metaclass=ABCMeta):
     def __contains__(self, word):
         return word in self.vocabulary()
 
+    def __len__(self):
+        return len(self.vocabulary())
+
     @abstractmethod
     def add_count(self, order, count):
         pass
