@@ -43,10 +43,10 @@ def load(fp, model=None, parser=None):
 def loadf(path, mode="rt", encoding=None, model=None, parser=None):
     """Deserialize path (a text file) to a Python object."""
     with open(path, mode=mode, encoding=encoding) as f:
-        return load(f, model, parser)
+        return load(f, model=model, parser=parser)
 
 
 def loads(s, model=None, parser=None):
     """Deserialize s (a str) to a Python object."""
     with StringIO(s) as f:
-        return load(f, model, parser)
+        return load(f, model=model, parser=parser)
