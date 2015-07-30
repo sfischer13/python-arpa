@@ -8,3 +8,8 @@ def test_new_model_counts():
 def test_new_model_len():
     lm = ARPAModelSimple()
     assert len(lm) == 0
+
+
+def test_new_model_vocabulary():
+    lm = ARPAModelSimple()
+    assert lm.vocabulary() == []
