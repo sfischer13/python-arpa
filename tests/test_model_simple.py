@@ -1,9 +1,16 @@
 from arpa.models.simple import ARPAModelSimple
 
 
+def test_new_model_contains():
+    lm = ARPAModelSimple()
+    lm.add_entry(["foo"], 1.0)
+    assert "foo" in lm
+
+
 def test_new_model_counts():
     lm = ARPAModelSimple()
     assert lm.counts() == []
+
 
 def test_new_model_len():
     lm = ARPAModelSimple()
