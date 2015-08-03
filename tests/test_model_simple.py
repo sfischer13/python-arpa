@@ -1,3 +1,5 @@
+import pytest
+
 from arpa.models.simple import ARPAModelSimple
 
 
@@ -15,6 +17,12 @@ def test_new_model_contains():
 def test_new_model_counts():
     lm = ARPAModelSimple()
     assert lm.counts() == []
+
+
+def test_new_model_log_p():
+    lm = ARPAModelSimple()
+    with pytest.raises(ValueError):
+        lm.log_p(1)
 
 
 def test_new_model_len():
