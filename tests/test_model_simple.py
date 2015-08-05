@@ -25,6 +25,12 @@ def test_new_model_log_p():
         lm.log_p(1)
 
 
+def test_new_model_log_s():
+    lm = ARPAModelSimple()
+    with pytest.raises(ValueError):
+        lm.log_p(1)
+
+
 def test_new_model_len():
     lm = ARPAModelSimple()
     assert len(lm) == 0
