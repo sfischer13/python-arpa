@@ -16,7 +16,7 @@ class ARPAModelSimple(ARPAModel):
     def add_entry(self, ngram, p, bo=None, order=None):
         key = tuple(ngram)
         self._ps[key] = p
-        if bo:
+        if bo is not None:
             self._bos[key] = bo
 
     def counts(self):
