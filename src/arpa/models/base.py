@@ -53,7 +53,7 @@ class ARPAModel(metaclass=ABCMeta):
         pass
 
     def write(self, fp):
-        fp.write("\\data\\\n")
+        fp.write("\n\\data\\\n")
         for order, count in self.counts():
             fp.write("ngram {}={}\n".format(order, count))
         fp.write("\n")
