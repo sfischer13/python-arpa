@@ -81,12 +81,21 @@ class ARPAParserQuick(ARPAParser):
     def _entry(self, line):
         match = self.re_entry.match(line)
         if match:
-            p = float(match.group(1))
+            p = self._float_or_int(match.group(1))
             ngram = tuple(match.group(4).split(" "))
             bo = match.group(7)
-            bo = float(bo) if bo else None
+            bo = self._float_or_int(bo) if bo else None
             self._tmp_model.add_entry(ngram, p, bo, self._tmp_order)
         elif not line:
             self._state = self.State.HEADER  # last entry
         else:
             raise ParseException(line)
+
+    @staticmethod
+    def _float_or_int(s):
+        f = float(s)
+        i = int(f)
+        if str(i) == s:  # don't drop trailing ".0"
+            return i
+        else:
+            return f
