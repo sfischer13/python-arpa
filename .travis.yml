@@ -14,5 +14,8 @@ env:
 install:
   - pip install tox
 
+before_script:
+  - cd tests/data && ./download.sh && cd ../..
+
 script:
   - tox -v -e $TOX_ENV
