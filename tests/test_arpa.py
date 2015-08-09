@@ -15,3 +15,11 @@ def test_loadf_dumpf():
     out.close()
     assert filecmp.cmp(TEST_ARPA, out.name, shallow=False)
     os.unlink(out.name)
+
+
+def test_loads_dumps():
+    with open(TEST_ARPA, "rt") as fp:
+        txt = fp.read()
+        lm = arpa.loads(txt)[0]
+        out = arpa.dumps(lm)
+        assert txt == out
