@@ -4,8 +4,8 @@ from .base import ARPAModel
 
 
 class ARPAModelSimple(ARPAModel):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, unk="<unk>"):
+        super().__init__(unk=unk)
         self._counts = OrderedDict()
         self._ps = OrderedDict()
         self._bos = OrderedDict()

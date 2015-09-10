@@ -2,8 +2,9 @@ from abc import ABCMeta, abstractmethod
 
 
 class ARPAModel(metaclass=ABCMeta):
-    def __init__(self):
+    def __init__(self, unk="<unk>"):
         self._base = 10
+        self._unk = unk
 
     def __contains__(self, word):
         return word in self.vocabulary()
@@ -20,15 +21,23 @@ class ARPAModel(metaclass=ABCMeta):
         pass
 
     def log_p(self, ngram):
-        ngram = self._check_input(ngram)
+        words = self._check_input(ngram)
+        if self._unk:
+            words = self._replace_unks(words)
+        return self.log_p_raw(words)
+
+    def log_p_raw(self, ngram):
         try:
             return self._log_p(ngram)
         except KeyError:
-            try:
-                log_bo = self._log_bo(ngram[:-1])
-            except KeyError:
-                log_bo = 0
-            return log_bo + self.log_p(ngram[1:])
+            if len(ngram) == 1:
+                raise KeyError
+            else:
+                try:
+                    log_bo = self._log_bo(ngram[:-1])
+                except KeyError:
+                    log_bo = 0
+                return log_bo + self.log_p_raw(ngram[1:])
 
     def log_s(self, sentence):
         words = self._check_input(sentence)
@@ -91,3 +100,6 @@ class ARPAModel(metaclass=ABCMeta):
             return tuple(input.strip().split(" "))
         else:
             raise ValueError
+
+    def _replace_unks(self, words):
+        return tuple((w if w in self else self._unk) for w in words)
