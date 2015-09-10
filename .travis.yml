@@ -13,8 +13,6 @@ env:
 
 install:
   - pip install tox
-  - pip install nltk
-  - pip install https://github.com/kpu/kenlm/archive/master.zip
 
 before_script:
   - cd tests/data && ./download.sh && cd ../..

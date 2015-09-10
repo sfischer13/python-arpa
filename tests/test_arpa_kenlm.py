@@ -3,8 +3,9 @@ import os
 import random
 import sys
 
-import kenlm
 from nltk.corpus import PlaintextCorpusReader
+
+import kenlm
 
 import arpa
 
