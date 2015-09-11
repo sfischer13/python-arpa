@@ -22,3 +22,21 @@ def test_log_p_raw():
     lm = ARPAModelSimple()
     with pytest.raises(KeyError):
         lm.log_p_raw("UnladenSwallow")
+
+
+def test_log_p_empty_string():
+    lm = ARPAModelSimple()
+    with pytest.raises(ValueError):
+        lm.log_p("")
+
+
+def test_log_p_empty_tuple():
+    lm = ARPAModelSimple()
+    with pytest.raises(ValueError):
+        lm.log_p(tuple())
+
+
+def test_log_p_int():
+    lm = ARPAModelSimple()
+    with pytest.raises(ValueError):
+        lm.log_p(1)
