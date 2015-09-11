@@ -3,9 +3,21 @@ import os
 import os.path
 import tempfile
 
+import pytest
+
 import arpa
 
 TEST_ARPA = os.path.join(os.path.dirname(__file__), "data/test.arpa")
+
+
+def test_load_option_model():
+    with pytest.raises(ValueError):
+        arpa.load(None, model="foo")
+
+
+def test_load_option_parser():
+    with pytest.raises(ValueError):
+        arpa.load(None, parser="foo")
 
 
 def test_load_dump():
