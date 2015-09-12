@@ -59,7 +59,7 @@ def test_log_p_int():
 def test_log_s_int():
     lm = ARPAModelSimple()
     with pytest.raises(ValueError):
-        lm.log_p(1)
+        lm.log_s(1)
 
 
 def test_check_input_list():
