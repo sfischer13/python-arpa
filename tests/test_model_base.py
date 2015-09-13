@@ -17,6 +17,11 @@ def test_manual_p():
     assert round(lm.p("<s>"), 4) == 0
 
 
+def test_manual_contains():
+    lm = arpa.loadf(TEST_ARPA)[0]
+    assert "foo" in lm
+
+
 def test_new_model_contains_not():
     lm = ARPAModelSimple()
     assert "foo" not in lm
