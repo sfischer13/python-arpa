@@ -71,7 +71,7 @@ def _test_log_s(sentences, sos, eos):
         score_ken = lm_ken.score(sentence, bool(sos), bool(eos))
         results_me.append(score_me)
         results_ken.append(score_ken)
-    assert all(round(m - k, 3) == 0 for m, k in zip(results_me, results_ken))
+    assert all(round(m - k, 2) == 0 for m, k in zip(results_me, results_ken))
 
 
 def _random_sentences():
