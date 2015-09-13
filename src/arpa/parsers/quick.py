@@ -1,6 +1,6 @@
 try:
     from enum import Enum, unique
-except ImportError:
+except ImportError:  # pragma: no cover
     from enum34 import Enum, unique
 import re
 
