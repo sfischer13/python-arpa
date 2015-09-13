@@ -17,11 +17,11 @@ class ARPAModel(metaclass=ABCMeta):
         return len(self.vocabulary())
 
     @abstractmethod
-    def add_count(self, order, count):
+    def add_count(self, order, count):  # pragma: no cover
         pass
 
     @abstractmethod
-    def add_entry(self, ngram, p, bo=None, order=None):
+    def add_entry(self, ngram, p, bo=None, order=None):  # pragma: no cover
         pass
 
     def log_p(self, ngram):
@@ -63,15 +63,15 @@ class ARPAModel(metaclass=ABCMeta):
         return self._base ** self.log_s(sentence)
 
     @abstractmethod
-    def counts(self):
+    def counts(self):  # pragma: no cover
         pass
 
     @abstractmethod
-    def order(self):
+    def order(self):  # pragma: no cover
         pass
 
     @abstractmethod
-    def vocabulary(self):
+    def vocabulary(self):  # pragma: no cover
         pass
 
     def write(self, fp):
@@ -90,15 +90,15 @@ class ARPAModel(metaclass=ABCMeta):
         fp.write("\\end\\\n")
 
     @abstractmethod
-    def _entries(self, order):
+    def _entries(self, order):  # pragma: no cover
         pass
 
     @abstractmethod
-    def _log_bo(self, ngram):
+    def _log_bo(self, ngram):  # pragma: no cover
         pass
 
     @abstractmethod
-    def _log_p(self, ngram):
+    def _log_p(self, ngram):  # pragma: no cover
         pass
 
     @staticmethod
