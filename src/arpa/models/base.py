@@ -1,6 +1,9 @@
 from abc import ABCMeta, abstractmethod
 
 UNK = "<unk>"
+SOS = "<s>"
+EOS = "</s>"
+
 
 class ARPAModel(metaclass=ABCMeta):
     def __init__(self, unk=UNK):
@@ -40,9 +43,18 @@ class ARPAModel(metaclass=ABCMeta):
                     log_bo = 0
                 return log_bo + self.log_p_raw(ngram[1:])
 
-    def log_s(self, sentence):
+    def log_s(self, sentence, sos=SOS, eos=EOS):
         words = self._check_input(sentence)
-        return sum(self.log_p(words[:i]) for i in range(1, len(words) + 1))
+        if self._unk:
+            words = self._replace_unks(words)
+        if sos:
+            words = (sos, ) + words
+        if eos:
+            words = words + (eos, )
+        result = sum(self.log_p_raw(words[:i]) for i in range(1, len(words) + 1))
+        if sos:
+            result = result - self.log_p_raw(words[:1])
+        return result
 
     def p(self, ngram):
         return self._base ** self.log_p(ngram)
