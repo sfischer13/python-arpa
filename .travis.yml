@@ -11,6 +11,7 @@ env:
   - TOX_ENV=coverage
 
 install:
+  - pip install nltk
   - pip install tox
 
 before_script:
