@@ -1,21 +1,26 @@
 Python ARPA Package
 ===================
 
-|PyPI Version| |PyPI Downloads| |Travis| |Coverage Status|
+|PyPI Version| |PyPI Downloads| |Travis| |Dependency Status| |Coverage
+Status|
 
 | This is a library for reading ARPA n-gram models.
+| Python 3.2+ and Wheels are supported.
 | It was initiated by Stefan Fischer and is developed and maintained by
   many others.
 
 -  `Questions <mailto:sfischer13@ymail.com>`__ can be asked via e-mail.
 -  `Source code <http://github.com/sfischer13/python-arpa>`__ is tracked
    on GitHub.
--  `Changes <CHANGELOG.md>`__ between releases are documented.
+-  `Changes <https://github.com/sfischer13/python-arpa/blob/master/CHANGELOG.rst>`__
+   between releases are documented.
 -  `Bugs <https://github.com/sfischer13/python-arpa/issues>`__ can be
    reported on the issue tracker.
 
 Install
 -------
+
+|PyPI Python Versions| |PyPI Wheel|
 
 The package is available on
 `PyPI <https://pypi.python.org/pypi/arpa>`__:
@@ -23,9 +28,6 @@ The package is available on
 ::
 
     $ pip install arpa
-
-| Python 3.2+ is required: |PyPI Python Versions|
-| Wheels are supported: |PyPI Wheel|
 
 Use
 ---
@@ -47,17 +49,19 @@ Contribute
   `contributors <https://github.com/sfischer13/python-arpa/graphs/contributors>`__
   have done so before.
 
--  `Roadmap <TODO.md>`__ of planned improvements
+-  `Roadmap <https://github.com/sfischer13/python-arpa/blob/master/TODO.rst>`__
+   of planned improvements
 -  `Issues <https://github.com/sfischer13/python-arpa/issues>`__ that
    have been reported
 
-License |License|
------------------
+License
+-------
 
 | Copyright (c) 2015 Stefan Fischer
-| The source code is available under the `MIT
-  License <http://www.opensource.org/licenses/mit-license.php>`__.
-| See `LICENSE <LICENSE>`__ for further details.
+| The source code is available under the **MIT License**.
+| See
+  `LICENSE <https://github.com/sfischer13/python-arpa/blob/master/LICENSE>`__
+  for further details.
 
 .. |PyPI Version| image:: https://img.shields.io/pypi/v/arpa.svg
    :target: https://pypi.python.org/pypi/arpa
@@ -65,11 +69,11 @@ License |License|
    :target: https://pypi.python.org/pypi/arpa
 .. |Travis| image:: https://img.shields.io/travis/sfischer13/python-arpa.svg
    :target: https://travis-ci.org/sfischer13/python-arpa
+.. |Dependency Status| image:: https://www.versioneye.com/user/projects/55c5d4fa6537620017003629/badge.svg?style=flat
+   :target: https://www.versioneye.com/user/projects/55c5d4fa6537620017003629
 .. |Coverage Status| image:: https://coveralls.io/repos/sfischer13/python-arpa/badge.svg?branch=master&service=github
    :target: https://coveralls.io/github/sfischer13/python-arpa?branch=master
 .. |PyPI Python Versions| image:: https://img.shields.io/pypi/pyversions/arpa.svg
    :target: https://pypi.python.org/pypi/arpa
 .. |PyPI Wheel| image:: https://img.shields.io/pypi/wheel/arpa.svg
    :target: https://pypi.python.org/pypi/arpa
-.. |License| image:: https://img.shields.io/github/license/sfischer13/python-arpa.svg
-   :target: LICENSE
