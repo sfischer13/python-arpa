@@ -67,12 +67,11 @@ def _test_log_s(sentences, sos, eos):
     results_me = []
     results_ken = []
     for sentence in sentences:
-        prob_me = lm_me.log_s(sentence, sos=sos, eos=eos)
-        scores_ken = lm_ken.full_scores(sentence, bool(sos), bool(eos))
-        prob_ken = sum(prob for prob, _, _ in scores_ken)
-        results_me.append(prob_me)
-        results_ken.append(prob_ken)
-    assert all(round(m - k, 4) == 0 for m, k in zip(results_me, results_ken))
+        score_me = lm_me.log_s(sentence, sos=sos, eos=eos)
+        score_ken = lm_ken.score(sentence, bool(sos), bool(eos))
+        results_me.append(score_me)
+        results_ken.append(score_ken)
+    assert all(round(m - k, 3) == 0 for m, k in zip(results_me, results_ken))
 
 
 def _random_sentences():
