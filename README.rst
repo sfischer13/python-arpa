@@ -1,7 +1,7 @@
 Python ARPA Package
 ===================
 
-|PyPI Version| |PyPI Downloads| |Travis| |Dependency Status| |Coverage
+|PyPI Version| |PyPI Downloads| |Travis| |Coverage Status| |Dependency
 Status|
 
 | This is a library for reading ARPA n-gram models.
@@ -39,7 +39,18 @@ The package may be imported directly:
     import arpa
     models = arpa.loadf("foo.arpa")
     lm = models[0]  # ARPA files may contain several models.
-    lm.p("in the end")  # p(end|in, the)
+
+    # probability p(end|in, the)
+    lm.p("in the end")
+    lm.log_p("in the end")
+
+    # sentence score w/ sentence markers
+    lm.s("This is the end .")
+    lm.log_s("This is the end .")
+
+    # sentence score w/o sentence markers
+    lm.s("This is the end .", sos=False, eos=False)
+    lm.log_s("This is the end .", sos=False, eos=False)
 
 Contribute
 ----------
@@ -69,10 +80,10 @@ License
    :target: https://pypi.python.org/pypi/arpa
 .. |Travis| image:: https://img.shields.io/travis/sfischer13/python-arpa.svg
    :target: https://travis-ci.org/sfischer13/python-arpa
-.. |Dependency Status| image:: https://www.versioneye.com/user/projects/55c5d4fa6537620017003629/badge.svg?style=flat
-   :target: https://www.versioneye.com/user/projects/55c5d4fa6537620017003629
 .. |Coverage Status| image:: https://coveralls.io/repos/sfischer13/python-arpa/badge.svg?branch=master&service=github
    :target: https://coveralls.io/github/sfischer13/python-arpa?branch=master
+.. |Dependency Status| image:: https://www.versioneye.com/user/projects/55c5d4fa6537620017003629/badge.svg?style=flat
+   :target: https://www.versioneye.com/user/projects/55c5d4fa6537620017003629
 .. |PyPI Python Versions| image:: https://img.shields.io/pypi/pyversions/arpa.svg
    :target: https://pypi.python.org/pypi/arpa
 .. |PyPI Wheel| image:: https://img.shields.io/pypi/wheel/arpa.svg
