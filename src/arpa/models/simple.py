@@ -1,10 +1,11 @@
 from collections import OrderedDict
 
 from .base import ARPAModel
+from .base import UNK
 
 
 class ARPAModelSimple(ARPAModel):
-    def __init__(self, unk="<unk>"):
+    def __init__(self, unk=UNK):
         super().__init__(unk=unk)
         self._counts = OrderedDict()
         self._ps = OrderedDict()

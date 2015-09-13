@@ -1,8 +1,9 @@
 from abc import ABCMeta, abstractmethod
 
+UNK = "<unk>"
 
 class ARPAModel(metaclass=ABCMeta):
-    def __init__(self, unk="<unk>"):
+    def __init__(self, unk=UNK):
         self._base = 10
         self._unk = unk
 
