@@ -82,10 +82,15 @@ class ARPAModel(metaclass=ABCMeta):
         for order, _ in self.counts():
             fp.write("\\{}-grams:\n".format(order))
             for e in self._entries(order):
-                fp.write("{}\t{}".format(e[0], " ".join(e[1])))
-                if len(e) == 3:
-                    fp.write("\t{}".format(e[2]))
-                fp.write("\n")
+                prob = e[0]
+                ngram = " ".join(e[1])
+                if len(e) == 2:
+                    fp.write("{}\t{}\n".format(prob, ngram))
+                elif len(e) == 3:
+                    backoff = e[2]
+                    fp.write("{}\t{}\t{}\n".format(prob, ngram, backoff))
+                else:
+                    raise ValueError
             fp.write("\n")
         fp.write("\\end\\\n")
 
