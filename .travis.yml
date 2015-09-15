@@ -13,7 +13,7 @@ env:
 
 install:
   - pip install nltk
-  - pip install --upgrade tox
+  - pip install tox
 
 before_script:
   - cd tests/data && ./download.sh && cd ../..
