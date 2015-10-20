@@ -23,6 +23,8 @@ setup(
     keywords="ARPA n-gram ngram language model LM language technology LT "
     "computational linguistics CL natural language processing NLP unigram bigram trigram",
     install_requires=["enum34"],
+    setup_requires=["pytest-runner"],
+    tests_require=["pytest"],   
     packages=find_packages("src"),
     package_dir={"": "src"},
     classifiers=[
@@ -38,6 +40,7 @@ setup(
         "Programming Language :: Python :: 3.2",
         "Programming Language :: Python :: 3.3",
         "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: Implementation",
         "Programming Language :: Python :: Implementation :: CPython",
         "Topic :: Scientific/Engineering",
@@ -47,5 +50,4 @@ setup(
         "Topic :: Text Processing",
         "Topic :: Text Processing :: Linguistic"
     ],
-    test_suite="nose.collector",
     zip_safe=True)
