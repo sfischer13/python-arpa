@@ -3,12 +3,18 @@
 import os.path
 from setuptools import find_packages
 from setuptools import setup
+import sys
 
 
 def read(name):
     path = os.path.join(os.path.dirname(__file__), name)
     with open(path) as f:
         return f.read()
+
+
+install_requires = []
+if sys.version_info < (3, 4):
+    install_requires += ["enum34"]
 
 
 setup(
@@ -22,7 +28,7 @@ setup(
     long_description=read("README.rst"),
     keywords="ARPA n-gram ngram language model LM language technology LT "
     "computational linguistics CL natural language processing NLP unigram bigram trigram",
-    install_requires=["enum34"],
+    install_requires=install_requires,
     setup_requires=["pytest-runner"],
     tests_require=["pytest"],   
     packages=find_packages("src"),
