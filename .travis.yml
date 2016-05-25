@@ -15,8 +15,8 @@ env:
   - TOX_ENV=coverage
 
 install:
-  - pip install nltk
-  - pip install tox
+  - pip install nltk>=3.1
+  - pip install tox>=2.2
 
 before_script:
   - cd tests/data && ./download.sh && cd ../..
