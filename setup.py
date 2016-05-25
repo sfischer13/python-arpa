@@ -30,7 +30,7 @@ setup(
     "computational linguistics CL natural language processing NLP unigram bigram trigram",
     install_requires=install_requires,
     setup_requires=["pytest-runner"],
-    tests_require=["pytest"],   
+    tests_require=["pytest"],
     packages=find_packages("src"),
     package_dir={"": "src"},
     classifiers=[
