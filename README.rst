@@ -5,7 +5,7 @@ Python ARPA Package
 Status|
 
 | This is a library for reading ARPA n-gram models.
-| Python 3.2+ and Wheels are supported.
+| Python 3.3+ and Wheels are supported.
 | It was initiated by Stefan Fischer and is developed and maintained by
   many others.
 
