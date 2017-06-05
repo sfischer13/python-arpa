@@ -53,6 +53,7 @@ setup(
     name='arpa',
     package_dir={'': 'src'},
     packages=find_packages('src'),
+    python_requires='>=3.3',
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
     url='https://github.com/sfischer13/python-arpa',
