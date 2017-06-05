@@ -1,22 +1,20 @@
 #!/usr/bin/env python
 
-import os.path
-import sys
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
-from setuptools import find_packages
-from setuptools import setup
+with open('README.rst') as readme_file:
+    readme = readme_file.read()
 
+with open('HISTORY.rst') as history_file:
+    history = history_file.read()
 
-def read(name):
-    path = os.path.join(os.path.dirname(__file__), name)
-    with open(path) as f:
-        return f.read()
-
-
-install_requires = []
+requirements = []
 
 if sys.version_info < (3, 4):
-    install_requires += ["enum34"]
+    requirements += ['enum34']
 
 setup(
     author='Stefan Fischer',
@@ -46,11 +44,11 @@ setup(
     ],
     description='Library for reading ARPA n-gram models.',
     include_package_data=True,
-    install_requires=install_requires,
+    install_requires=requirements,
     keywords='ARPA n-gram ngram language model LM language technology LT '
     'computational linguistics CL natural language processing NLP unigram bigram trigram',
     license='MIT',
-    long_description=read('README.rst'),
+    long_description=readme + '\n\n' + history,
     name='arpa',
     package_dir={'arpa': 'arpa'},
     packages=['arpa'],
