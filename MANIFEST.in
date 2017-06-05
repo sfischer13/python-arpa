@@ -1,4 +1,12 @@
-include *.rst
-include *.txt
+include AUTHORS.rst
+include CONTRIBUTING.rst
+include HISTORY.rst
 include LICENSE
+include README.rst
 include tox.ini
+
+recursive-include arpa *.py
+
+recursive-include tests *
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
