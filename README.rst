@@ -1,7 +1,7 @@
 Python ARPA Package
 ===================
 
-|PyPI Version| |PyPI Downloads| |Travis| |Coverage Status| |Dependency
+|PyPI Version| |Travis| |Coverage Status| |Dependency
 Status|
 
 | This is a library for reading ARPA n-gram models.
@@ -20,7 +20,7 @@ Status|
 Install
 -------
 
-|PyPI Python Versions| |PyPI Wheel|
+|PyPI Python Versions|
 
 The package is available on
 `PyPI <https://pypi.python.org/pypi/arpa>`__:
@@ -76,8 +76,6 @@ License
 
 .. |PyPI Version| image:: https://img.shields.io/pypi/v/arpa.svg
    :target: https://pypi.python.org/pypi/arpa
-.. |PyPI Downloads| image:: https://img.shields.io/pypi/dm/arpa.svg
-   :target: https://pypi.python.org/pypi/arpa
 .. |Travis| image:: https://img.shields.io/travis/sfischer13/python-arpa.svg
    :target: https://travis-ci.org/sfischer13/python-arpa
 .. |Coverage Status| image:: https://coveralls.io/repos/sfischer13/python-arpa/badge.svg?branch=master&service=github
@@ -85,6 +83,4 @@ License
 .. |Dependency Status| image:: https://www.versioneye.com/user/projects/55c5d4fa6537620017003629/badge.svg?style=flat
    :target: https://www.versioneye.com/user/projects/55c5d4fa6537620017003629
 .. |PyPI Python Versions| image:: https://img.shields.io/pypi/pyversions/arpa.svg
-   :target: https://pypi.python.org/pypi/arpa
-.. |PyPI Wheel| image:: https://img.shields.io/pypi/wheel/arpa.svg
    :target: https://pypi.python.org/pypi/arpa
