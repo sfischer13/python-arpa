@@ -1,6 +1,6 @@
 # The MIT License (MIT)
 #
-# Copyright (c) 2015-2016 Stefan Fischer
+# Copyright (c) 2015-2018 Stefan Fischer
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -40,7 +40,7 @@ __all__ = ["dump dumpf dumps load loadf loads".split()]
 
 __author__ = "Stefan Fischer"
 __contact__ = "Stefan Fischer <sfischer13@ymail.com>"
-__copyright__ = "Copyright (c) 2015-2016 Stefan Fischer"
+__copyright__ = "Copyright (c) 2015-2018 Stefan Fischer"
 __credits__ = []
 __date__ = "2016-05-25"
 __license__ = "MIT"
