@@ -1,10 +1,10 @@
 .. arpa documentation master file, created by
-   sphinx-quickstart on Mon Jun  5 20:33:56 2017.
+   sphinx-quickstart on Sat Apr 28 01:57:55 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Python :mod:`arpa` Package
-==========================
+Documentation for Python :mod:`arpa`
+====================================
 
 .. toctree::
    :maxdepth: 2
