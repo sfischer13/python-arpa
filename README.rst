@@ -1,8 +1,7 @@
 Python ARPA Package
 ===================
 
-|PyPI Version| |Travis| |Coverage Status| |Dependency
-Status|
+|PyPI Version| |Travis| |Coverage Status|
 
 | This is a library for reading ARPA n-gram models.
 | Python 3.3+ and Wheels are supported.
@@ -80,7 +79,5 @@ License
    :target: https://travis-ci.org/sfischer13/python-arpa
 .. |Coverage Status| image:: https://coveralls.io/repos/sfischer13/python-arpa/badge.svg?branch=master&service=github
    :target: https://coveralls.io/github/sfischer13/python-arpa?branch=master
-.. |Dependency Status| image:: https://www.versioneye.com/user/projects/55c5d4fa6537620017003629/badge.svg?style=flat
-   :target: https://www.versioneye.com/user/projects/55c5d4fa6537620017003629
 .. |PyPI Python Versions| image:: https://img.shields.io/pypi/pyversions/arpa.svg
    :target: https://pypi.python.org/pypi/arpa
