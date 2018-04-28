@@ -4,8 +4,8 @@ except ImportError:  # pragma: no cover
     from enum34 import Enum, unique
 import re
 
-from ..exceptions import ParseException
 from .base import ARPAParser
+from ..exceptions import ParseException
 
 
 class ARPAParserQuick(ARPAParser):
@@ -16,12 +16,12 @@ class ARPAParserQuick(ARPAParser):
         HEADER = 3
         ENTRY = 4
 
-    re_count = re.compile(r"^ngram (\d+)=(\d+)$")
-    re_header = re.compile(r"^\\(\d+)-grams:$")
-    re_entry = re.compile("^(-?\\d+(\\.\\d+)?([eE]-?\\d+)?)"
-                          "\t"
-                          "(\\S+( \\S+)*)"
-                          "(\t(-?\\d+(\\.\\d+)?)([eE]-?\\d+)?)?$")
+    re_count = re.compile(r'^ngram (\d+)=(\d+)$')
+    re_header = re.compile(r'^\\(\d+)-grams:$')
+    re_entry = re.compile('^(-?\\d+(\\.\\d+)?([eE]-?\\d+)?)'
+                          '\t'
+                          '(\\S+( \\S+)*)'
+                          '(\t(-?\\d+(\\.\\d+)?)([eE]-?\\d+)?)?$')
 
     def __init__(self, model):
         self.ModelClass = model
@@ -46,7 +46,7 @@ class ARPAParserQuick(ARPAParser):
         return self._result
 
     def _data(self, line):
-        if line == "\\data\\":
+        if line == '\\data\\':
             self._state = self.State.COUNT
             self._tmp_model = self.ModelClass()
         else:
@@ -68,7 +68,7 @@ class ARPAParserQuick(ARPAParser):
         if match:
             self._state = self.State.ENTRY
             self._tmp_order = match.group(1)
-        elif line == "\\end\\":
+        elif line == '\\end\\':
             self._result.append(self._tmp_model)
             self._state = self.State.DATA
             self._tmp_model = None
@@ -82,7 +82,7 @@ class ARPAParserQuick(ARPAParser):
         match = self.re_entry.match(line)
         if match:
             p = self._float_or_int(match.group(1))
-            ngram = tuple(match.group(4).split(" "))
+            ngram = tuple(match.group(4).split(' '))
             bo = match.group(7)
             bo = self._float_or_int(bo) if bo else None
             self._tmp_model.add_entry(ngram, p, bo, self._tmp_order)

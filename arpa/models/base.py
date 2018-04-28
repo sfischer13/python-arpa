@@ -1,8 +1,8 @@
 from abc import ABCMeta, abstractmethod
 
-UNK = "<unk>"
-SOS = "<s>"
-EOS = "</s>"
+UNK = '<unk>'
+SOS = '<s>'
+EOS = '</s>'
 
 
 class ARPAModel(metaclass=ABCMeta):
@@ -75,24 +75,24 @@ class ARPAModel(metaclass=ABCMeta):
         pass
 
     def write(self, fp):
-        fp.write("\n\\data\\\n")
+        fp.write('\n\\data\\\n')
         for order, count in self.counts():
-            fp.write("ngram {}={}\n".format(order, count))
-        fp.write("\n")
+            fp.write('ngram {}={}\n'.format(order, count))
+        fp.write('\n')
         for order, _ in self.counts():
-            fp.write("\\{}-grams:\n".format(order))
+            fp.write('\\{}-grams:\n'.format(order))
             for e in self._entries(order):
                 prob = e[0]
-                ngram = " ".join(e[1])
+                ngram = ' '.join(e[1])
                 if len(e) == 2:
-                    fp.write("{}\t{}\n".format(prob, ngram))
+                    fp.write('{}\t{}\n'.format(prob, ngram))
                 elif len(e) == 3:
                     backoff = e[2]
-                    fp.write("{}\t{}\t{}\n".format(prob, ngram, backoff))
+                    fp.write('{}\t{}\t{}\n'.format(prob, ngram, backoff))
                 else:
                     raise ValueError
-            fp.write("\n")
-        fp.write("\\end\\\n")
+            fp.write('\n')
+        fp.write('\\end\\\n')
 
     @abstractmethod
     def _entries(self, order):  # pragma: no cover
@@ -115,7 +115,7 @@ class ARPAModel(metaclass=ABCMeta):
         elif isinstance(input, list):
             return tuple(input)
         elif isinstance(input, str):
-            return tuple(input.strip().split(" "))
+            return tuple(input.strip().split(' '))
         else:
             raise ValueError
 

@@ -9,7 +9,7 @@ def dump(obj, fp):
     obj.write(fp)
 
 
-def dumpf(obj, path, mode="wt", encoding=None):
+def dumpf(obj, path, mode='wt', encoding=None):
     """Serialize obj to path in ARPA format."""
     with open(path, mode=mode, encoding=encoding) as f:
         dump(obj, f)
@@ -25,22 +25,22 @@ def dumps(obj):
 def load(fp, model=None, parser=None):
     """Deserialize fp (a file-like object) to a Python object."""
     if not model:
-        model = "simple"
+        model = 'simple'
     if not parser:
-        parser = "quick"
+        parser = 'quick'
 
-    if model not in ["simple"]:
+    if model not in ['simple']:
         raise ValueError
-    if parser not in ["quick"]:
+    if parser not in ['quick']:
         raise ValueError
 
-    if model == "simple" and parser == "quick":
+    if model == 'simple' and parser == 'quick':
         return ARPAParserQuick(ARPAModelSimple).parse(fp)
     else:
         raise ValueError
 
 
-def loadf(path, mode="rt", encoding=None, model=None, parser=None):
+def loadf(path, mode='rt', encoding=None, model=None, parser=None):
     """Deserialize path (a text file) to a Python object."""
     with open(path, mode=mode, encoding=encoding) as f:
         return load(f, model=model, parser=parser)

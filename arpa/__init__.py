@@ -36,13 +36,13 @@ The library was initiated by Stefan Fischer and is developed and maintained by m
 
 from .arpa import dump, dumpf, dumps, load, loadf, loads
 
-__all__ = ["dump dumpf dumps load loadf loads".split()]
+__all__ = ['dump', 'dumpf', 'dumps', 'load', 'loadf', 'loads']
 
-__author__ = "Stefan Fischer"
-__contact__ = "Stefan Fischer <sfischer13@ymail.com>"
-__copyright__ = "Copyright (c) 2015-2018 Stefan Fischer"
+__author__ = 'Stefan Fischer'
+__contact__ = 'Stefan Fischer <sfischer13@ymail.com>'
+__copyright__ = 'Copyright (c) 2015-2018 Stefan Fischer'
 __credits__ = []
-__date__ = "2018-04-28"
-__license__ = "MIT"
-__status__ = "development"
-__version__ = "0.1.0b2"
+__date__ = '2018-04-28'
+__license__ = 'MIT'
+__status__ = 'development'
+__version__ = '0.1.0b2'
