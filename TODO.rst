@@ -1,10 +1,12 @@
 Roadmap
 =======
 
--  [X] support UNKs
--  [X] unit tests
--  [X] improve coverage
--  [ ] support zipped models
--  [ ] more efficient model
--  [ ] faster parser
--  [ ] benchmarks
+- [X] support UNKs
+- [X] unit tests
+- [X] improve coverage
+- [ ] release stable version
+- [ ] support zipped models
+- [ ] performance
+  - [ ] more efficient model
+  - [ ] faster parser
+- [ ] benchmarks
