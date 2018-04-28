@@ -1,20 +1,19 @@
-import itertools
 import os
 import random
-import sys
 
-import nltk
+import arpa
 
 import kenlm
 
-import arpa
+import nltk
+
 
 MAX_ORDER = 5
 N_QUERIES = 10
 N_SENTENCES = 10
 
-TEST_ARPA = os.path.join(os.path.dirname(__file__), "data/test.arpa")
-WORDS = list(nltk.corpus.PlaintextCorpusReader("/usr/share/dict", "words").words())
+TEST_ARPA = os.path.join(os.path.dirname(__file__), 'data/test.arpa')
+WORDS = list(nltk.corpus.PlaintextCorpusReader('/usr/share/dict', 'words').words())
 
 
 def test_log_p_random():
@@ -29,7 +28,7 @@ def _test_log_p(queries):
     results_ken = []
     for ngram in queries:
         prob_me = lm_me.log_p(ngram)
-        prob_ken = list(lm_ken.full_scores(" ".join(ngram), False, False))[-1][0]
+        prob_ken = list(lm_ken.full_scores(' '.join(ngram), False, False))[-1][0]
         results_me.append(prob_me)
         results_ken.append(prob_ken)
     assert all(round(m - k, 4) == 0 for m, k in zip(results_me, results_ken))
@@ -50,15 +49,15 @@ def test_log_s_random_no_tags():
 
 
 def test_log_s_random_sos():
-    _test_log_s(_random_sentences(), "<s>", None)
+    _test_log_s(_random_sentences(), '<s>', None)
 
 
 def test_log_s_random_eos():
-    _test_log_s(_random_sentences(), None, "</s>")
+    _test_log_s(_random_sentences(), None, '</s>')
 
 
 def test_log_s_random_sos_eos():
-    _test_log_s(_random_sentences(), "<s>", "</s>")
+    _test_log_s(_random_sentences(), '<s>', '</s>')
 
 
 def _test_log_s(sentences, sos, eos):
@@ -75,5 +74,5 @@ def _test_log_s(sentences, sos, eos):
 
 
 def _random_sentences():
-    sample = [" ".join(words) for words in nltk.corpus.udhr2.sents("eng.txt")]
+    sample = [' '.join(words) for words in nltk.corpus.udhr2.sents('eng.txt')]
     return random.sample(sample, N_SENTENCES)
