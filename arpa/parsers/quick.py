@@ -1,7 +1,4 @@
-try:
-    from enum import Enum, unique
-except ImportError:  # pragma: no cover
-    from enum34 import Enum, unique
+from enum import Enum, unique
 import re
 
 from .base import ARPAParser

@@ -4,7 +4,6 @@ sudo: required
 language: python
 
 python:
-  - 3.3
   - 3.4
   - 3.5
   - 3.6
@@ -26,7 +25,7 @@ before_script:
   - cd tests/data && python -m download && cd ../..
 
 script:
-  - if [[ $TRAVIS_PYTHON_VERSION == 3.3 || $TRAVIS_PYTHON_VERSION == 3.4 ]]; then py.test; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.4 ]]; then py.test; fi
   - if [[ $TRAVIS_PYTHON_VERSION == 3.5 || $TRAVIS_PYTHON_VERSION == 3.6 || $TRAVIS_PYTHON_VERSION == 3.7 || $TRAVIS_PYTHON_VERSION == nightly ]]; then pytest; fi
   - if [[ $TRAVIS_PYTHON_VERSION == 3.7 ]]; then coverage run --source=arpa setup.py test; fi
 

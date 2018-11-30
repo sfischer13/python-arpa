@@ -15,9 +15,6 @@ with open('HISTORY.rst') as history_file:
 
 requirements = []
 
-if sys.version_info < (3, 4):
-    requirements += ['enum34']
-
 setup(
     author='Stefan Fischer',
     author_email='sfischer13@ymail.com',
@@ -30,7 +27,6 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
@@ -55,7 +51,7 @@ setup(
     name='arpa',
     package_dir={'arpa': 'arpa'},
     packages=['arpa'],
-    python_requires='>=3.3',
+    python_requires='~=3.4',
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
     url='https://github.com/sfischer13/python-arpa',
