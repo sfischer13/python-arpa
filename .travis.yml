@@ -32,3 +32,7 @@ script:
 
 after_success:
 - if [[ $TRAVIS_PYTHON_VERSION == 3.7 ]]; then coveralls; fi
+
+notifications:
+  on_failure: always
+  on_success: change
