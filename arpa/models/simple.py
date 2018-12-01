@@ -12,6 +12,10 @@ class ARPAModelSimple(ARPAModel):
         self._ps = OrderedDict()
         self._bos = OrderedDict()
         self._vocabulary = None
+        self._vocabulary_sorted = None
+
+    def __contains__(self, word):
+        return word in self.vocabulary(sort=False)
 
     def add_count(self, order, count):
         self._counts[order] = count
@@ -30,10 +34,14 @@ class ARPAModelSimple(ARPAModel):
     def order(self):
         return max(self._counts.keys(), default=None)
 
-    def vocabulary(self):
+    def vocabulary(self, sort=True):
         if self._vocabulary is None:
-            self._vocabulary = sorted(set(word for ngram in self._ps.keys() for word in ngram))
-        return self._vocabulary
+            self._vocabulary = set(word for ngram in self._ps.keys() for word in ngram)
+            self._vocabulary_sorted = sorted(self._vocabulary)
+        if sort:
+            return self._vocabulary_sorted
+        else:
+            return self._vocabulary
 
     def _entries(self, order):
         return (self._entry(k) for k in self._ps.keys() if len(k) == order)
