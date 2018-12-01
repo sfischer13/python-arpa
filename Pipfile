@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+coveralls = "*"
+kenlm = {git = "git://github.com/kpu/kenlm.git"}
+nltk = "*"
+pytest = "*"
+pytest-runner = "*"
+Sphinx = "*"
+
+[packages]
+
+[requires]
+python_version = "3.7"
