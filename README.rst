@@ -11,7 +11,7 @@ Python ARPA Package
 -  `Questions <mailto:sfischer13@ymail.com>`__ can be asked via e-mail.
 -  `Source code <http://github.com/sfischer13/python-arpa>`__ is tracked
    on GitHub.
--  `Changes <https://github.com/sfischer13/python-arpa/blob/master/CHANGELOG.rst>`__
+-  `Changes <https://github.com/sfischer13/python-arpa/blob/master/HISTORY.rst>`__
    between releases are documented.
 -  `Bugs <https://github.com/sfischer13/python-arpa/issues>`__ can be
    reported on the issue tracker.
