@@ -7,6 +7,12 @@ class ARPAException(Exception):
     pass
 
 
+class FrozenException(ARPAException):
+    """Language model is frozen."""
+
+    pass
+
+
 class ParseException(ARPAException):
     """ARPA file could not be parsed."""
 

@@ -2,6 +2,7 @@ from collections import OrderedDict
 
 from .base import ARPAModel
 from .base import UNK
+from ..exceptions import FrozenException
 
 
 class ARPAModelSimple(ARPAModel):
@@ -10,11 +11,14 @@ class ARPAModelSimple(ARPAModel):
         self._counts = OrderedDict()
         self._ps = OrderedDict()
         self._bos = OrderedDict()
+        self._vocabulary = None
 
     def add_count(self, order, count):
         self._counts[order] = count
 
     def add_entry(self, ngram, p, bo=None, order=None):
+        if self._vocabulary is not None:
+            raise FrozenException
         key = tuple(ngram)
         self._ps[key] = p
         if bo is not None:
@@ -30,7 +34,9 @@ class ARPAModelSimple(ARPAModel):
             return None
 
     def vocabulary(self):
-        return sorted(set(word for ngram in self._ps.keys() for word in ngram))
+        if self._vocabulary is None:
+            self._vocabulary = sorted(set(word for ngram in self._ps.keys() for word in ngram))
+        return self._vocabulary
 
     def _entries(self, order):
         return (self._entry(k) for k in self._ps.keys() if len(k) == order)
