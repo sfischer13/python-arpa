@@ -59,8 +59,6 @@ Contribute
   `contributors <https://github.com/sfischer13/python-arpa/graphs/contributors>`__
   have done so before.
 
--  `Roadmap <https://github.com/sfischer13/python-arpa/blob/master/TODO.rst>`__
-   of planned improvements
 -  `Issues <https://github.com/sfischer13/python-arpa/issues>`__ that
    have been reported
 
