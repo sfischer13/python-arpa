@@ -71,7 +71,7 @@ class ARPAModel(metaclass=ABCMeta):
         pass
 
     @abstractmethod
-    def vocabulary(self):  # pragma: no cover
+    def vocabulary(self, sort=True):  # pragma: no cover
         pass
 
     def write(self, fp):
