@@ -4,7 +4,6 @@ Python ARPA Package
 |PyPI Version| |Travis| |Coverage Status|
 
 | This is a library for reading ARPA n-gram models.
-| Python 3.4+ and Wheels are supported.
 | It was initiated by Stefan Fischer and is developed and maintained by
   many others.
 
@@ -58,9 +57,6 @@ Contribute
 | Other
   `contributors <https://github.com/sfischer13/python-arpa/graphs/contributors>`__
   have done so before.
-
--  `Issues <https://github.com/sfischer13/python-arpa/issues>`__ that
-   have been reported
 
 License
 -------
