@@ -28,10 +28,7 @@ class ARPAModelSimple(ARPAModel):
         return sorted(self._counts.items())
 
     def order(self):
-        try:
-            return max(self._counts.keys())
-        except ValueError:  # max([], default=None) is Python 3.4+ only
-            return None
+        return max(self._counts.keys(), default=None)
 
     def vocabulary(self):
         if self._vocabulary is None:
