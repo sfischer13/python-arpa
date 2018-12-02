@@ -29,6 +29,7 @@ before_script:
 script:
   - if [[ $TRAVIS_PYTHON_VERSION == 3.4 ]]; then py.test; fi
   - if [[ $TRAVIS_PYTHON_VERSION == 3.5 || $TRAVIS_PYTHON_VERSION == 3.6 || $TRAVIS_PYTHON_VERSION == 3.7 || $TRAVIS_PYTHON_VERSION == nightly ]]; then pytest; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.7 ]]; then mkdir docs/_static && sphinx-build -nWT -b html -d docs/_build/doctrees docs docs/_build/html; fi
   - if [[ $TRAVIS_PYTHON_VERSION == 3.7 ]]; then coverage run --source=arpa setup.py test; fi
 
 after_success:
