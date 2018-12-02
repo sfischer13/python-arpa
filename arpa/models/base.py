@@ -127,6 +127,5 @@ class ARPAModel(metaclass=ABCMeta):
         if ' ' in input:
             raise ValueError
 
-
     def _replace_unks(self, words):
         return tuple((w if w in self else self._unk) for w in words)
