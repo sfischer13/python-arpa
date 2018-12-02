@@ -1,4 +1,9 @@
-from arpa.models.simple import ARPAModelSimple
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+
+from arpa_backport.models.simple import ARPAModelSimple
 
 
 def test_new_model_contains_not():

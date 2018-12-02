@@ -1,3 +1,8 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+
 from collections import OrderedDict
 
 from .base import ARPAModel
@@ -7,7 +12,7 @@ from ..exceptions import FrozenException
 
 class ARPAModelSimple(ARPAModel):
     def __init__(self, unk=UNK):
-        super().__init__(unk=unk)
+        super(ARPAModelSimple, self).__init__(unk=unk)
         self._counts = OrderedDict()
         self._ps = OrderedDict()
         self._bos = OrderedDict()
@@ -33,7 +38,10 @@ class ARPAModelSimple(ARPAModel):
         return sorted(self._counts.items())
 
     def order(self):
-        return max(self._counts.keys(), default=None)
+        try:
+            return max(self._counts.keys())
+        except ValueError:
+            return None
 
     def vocabulary(self, sort=True):
         if self._vocabulary is None:

@@ -20,11 +20,16 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 """
-Library for reading ARPA n-gram models.
+Library for reading ARPA n-gram models with Python 2.7.
 
 The package may be imported directly::
 
-    import arpa
+    import arpa_backport as arpa
+
+**NOTE:**
+
+Like its Python 3 equivalent, this library uses *unicode strings*.
+Using *byte strings* (``str``) will cause an *exception*.
 
 Details about the ARPA n-gram format can be found here:
 
@@ -33,6 +38,11 @@ Details about the ARPA n-gram format can be found here:
 
 The library was initiated by Stefan Fischer and is developed and maintained by many others.
 """
+
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
 
 from .api import dump, dumpf, dumps, load, loadf, loads
 

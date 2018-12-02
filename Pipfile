@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 check-manifest = "*"
 coveralls = "*"
+enum34 = "*"
 flake8 = "*"
 kenlm = {git = "git://github.com/kpu/kenlm.git"}
 nltk = "*"
@@ -21,4 +22,4 @@ yapf = "*"
 [packages]
 
 [requires]
-python_version = "3.7"
+python_version = "2.7"

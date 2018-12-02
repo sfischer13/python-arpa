@@ -1,9 +1,15 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+
 import filecmp
 import os
 import os.path
 import tempfile
+from io import open
 
-import arpa
+import arpa_backport as arpa
 
 import pytest
 

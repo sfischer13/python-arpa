@@ -1,3 +1,8 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+
 from abc import ABCMeta, abstractmethod
 
 UNK = '<unk>'
@@ -5,7 +10,9 @@ SOS = '<s>'
 EOS = '</s>'
 
 
-class ARPAModel(metaclass=ABCMeta):
+class ARPAModel(object):
+    __metaclass__ = ABCMeta
+
     def __init__(self, unk=UNK):
         self._base = 10
         self._unk = unk
@@ -52,7 +59,7 @@ class ARPAModel(metaclass=ABCMeta):
             words = (sos, ) + words
         if eos:
             words = words + (eos, )
-        result = sum(self.log_p_raw(words[:i]) for i in range(1, len(words) + 1))
+        result = sum(self.log_p_raw(words[:i]) for i in xrange(1, len(words) + 1))
         if sos:
             result = result - self.log_p_raw(words[:1])
         return result
@@ -115,14 +122,14 @@ class ARPAModel(metaclass=ABCMeta):
             return input
         elif isinstance(input, list):
             return tuple(input)
-        elif isinstance(input, str):
+        elif isinstance(input, unicode):
             return tuple(input.strip().split(' '))
         else:
             raise ValueError
 
     @staticmethod
     def _check_word(input):
-        if not isinstance(input, str):
+        if not isinstance(input, unicode):
             raise ValueError
         if ' ' in input:
             raise ValueError

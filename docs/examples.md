@@ -1,7 +1,12 @@
 # Examples
 
+**NOTE:**
+
+Like its Python 3 equivalent, this library uses *unicode strings*.  
+Using *byte strings* (``str``) will cause an *exception*.
+
 ```python
-import arpa
+import arpa_backport as arpa
 models = arpa.loadf("foo.arpa")
 lm = models[0]  # ARPA files may contain several models.
 

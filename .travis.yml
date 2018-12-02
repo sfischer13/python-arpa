@@ -6,34 +6,28 @@ language: python
 cache: pip
 
 python:
-  - 3.4
-  - 3.5
-  - 3.6
-  - 3.7
-  - nightly
+  - 2.7
 
 matrix:
   fast_finish: true
   allow_failures:
     - python: nightly
 
+env:
+  - REQUIREMENTS=pip
+  - REQUIREMENTS=pipenv
+
 install:
   - pip install .
-  - if [[ $TRAVIS_PYTHON_VERSION != 3.7 ]]; then pip install -r requirements.txt && pip install -r requirements_dev.txt; fi
-  - if [[ $TRAVIS_PYTHON_VERSION == 3.7 ]]; then pip install -U pipenv==2018.11.26 && pipenv sync --dev; fi
+  - if [[ $REQUIREMENTS == pip ]]; then pip install -r requirements.txt && pip install -r requirements_dev.txt; fi
+  - if [[ $REQUIREMENTS == pipenv ]]; then pip install -U pipenv==2018.11.26 && pipenv sync --dev; fi
 
 before_script:
   - cd tests/data && ./download.sh && cd ../..
   - cd tests/data && python -m download && cd ../..
 
 script:
-  - if [[ $TRAVIS_PYTHON_VERSION == 3.4 ]]; then py.test; fi
-  - if [[ $TRAVIS_PYTHON_VERSION == 3.5 || $TRAVIS_PYTHON_VERSION == 3.6 || $TRAVIS_PYTHON_VERSION == 3.7 || $TRAVIS_PYTHON_VERSION == nightly ]]; then pytest; fi
-  - if [[ $TRAVIS_PYTHON_VERSION == 3.7 ]]; then mkdir docs/_static && sphinx-build -nWT -b html -d docs/_build/doctrees docs docs/_build/html; fi
-  - if [[ $TRAVIS_PYTHON_VERSION == 3.7 ]]; then coverage run --source=arpa setup.py test; fi
-
-after_success:
-- if [[ $TRAVIS_PYTHON_VERSION == 3.7 ]]; then coveralls; fi
+  - py.test
 
 notifications:
   on_failure: always

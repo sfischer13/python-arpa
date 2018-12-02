@@ -1,6 +1,6 @@
 API 
 ===
 
-.. automodule:: arpa
+.. automodule:: arpa_backport
    :members:
    :undoc-members:

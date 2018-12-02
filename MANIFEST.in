@@ -12,7 +12,7 @@ include .style.yapf
 include Pipfile
 include Pipfile.lock
 
-recursive-include arpa *.py
+recursive-include arpa_backport *.py
 
 include docs/conf.py
 include docs/Makefile

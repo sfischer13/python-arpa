@@ -1,6 +1,13 @@
-from arpa.models.base import ARPAModel
-from arpa.models.simple import ARPAModelSimple
-from arpa.parsers.quick import ARPAParserQuick
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+
+from io import open
+
+from arpa_backport.models.base import ARPAModel
+from arpa_backport.models.simple import ARPAModelSimple
+from arpa_backport.parsers.quick import ARPAParserQuick
 
 from test_arpa import TEST_ARPA
 

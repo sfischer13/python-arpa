@@ -1,3 +1,8 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+
 from enum import Enum, unique
 import re
 
@@ -6,12 +11,13 @@ from ..exceptions import ParseException
 
 
 class ARPAParserQuick(ARPAParser):
-    @unique
     class State(Enum):
         DATA = 1
         COUNT = 2
         HEADER = 3
         ENTRY = 4
+
+    State = unique(State)
 
     re_count = re.compile(r'^ngram (\d+)=(\d+)$')
     re_header = re.compile(r'^\\(\d+)-grams:$')
@@ -92,7 +98,7 @@ class ARPAParserQuick(ARPAParser):
     def _float_or_int(s):
         f = float(s)
         i = int(f)
-        if str(i) == s:  # don't drop trailing ".0"
+        if unicode(i) == s:  # don't drop trailing ".0"
             return i
         else:
             return f

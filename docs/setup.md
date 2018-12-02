@@ -3,11 +3,11 @@
 Global installation:
 
 ```sh
-pip install -U arpa
+pip install -U arpa-backport
 ```
 
 Local installation:
 
 ```sh
-pip install --user -U arpa
+pip install --user -U arpa-backport
 ```

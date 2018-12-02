@@ -19,14 +19,19 @@ Setup
 
 The package is available on [PyPI](https://pypi.python.org/pypi/arpa):
 
-    $ pip install arpa
+    $ pip install arpa-backport
 
 Usage
 -----
 
+**NOTE:**
+
+Like its Python 3 equivalent, this library uses *unicode strings*.
+Using *byte strings* (``str``) will cause an *exception*.
+
 The package may be imported directly:
 
-    import arpa
+    import arpa-backport as arpa
     models = arpa.loadf("foo.arpa")
     lm = models[0]  # ARPA files may contain several models.
 

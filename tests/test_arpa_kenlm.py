@@ -1,6 +1,12 @@
-import random
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
 
-import arpa
+import random
+from itertools import izip
+
+import arpa_backport as arpa
 
 import kenlm
 
@@ -32,7 +38,7 @@ def _test_log_p(queries):
             prob_ken = list(lm_ken.full_scores(' '.join(ngram), False, False))[-1][0]
             results_me.append(prob_me)
             results_ken.append(prob_ken)
-        assert all(round(m - k, 4) == 0 for m, k in zip(results_me, results_ken))
+        assert all(round(m - k, 4) == 0 for m, k in izip(results_me, results_ken))
 
 
 def _random_ngram(length):
@@ -40,8 +46,8 @@ def _random_ngram(length):
 
 
 def _random_queries():
-    for order in range(1, MAX_ORDER + 1):
-        for _ in range(N_QUERIES):
+    for order in xrange(1, MAX_ORDER + 1):
+        for _ in xrange(N_QUERIES):
             yield _random_ngram(order)
 
 
@@ -72,7 +78,7 @@ def _test_log_s(sentences, sos, eos):
             score_ken = lm_ken.score(sentence, bool(sos), bool(eos))
             results_me.append(score_me)
             results_ken.append(score_ken)
-        assert all(round(m - k, 2) == 0 for m, k in zip(results_me, results_ken))
+        assert all(round(m - k, 2) == 0 for m, k in izip(results_me, results_ken))
 
 
 def _random_sentences():
