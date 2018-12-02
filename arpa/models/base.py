@@ -11,6 +11,7 @@ class ARPAModel(metaclass=ABCMeta):
         self._unk = unk
 
     def __contains__(self, word):
+        self._check_word(word)
         return word in self.vocabulary()
 
     def __len__(self):
@@ -118,6 +119,14 @@ class ARPAModel(metaclass=ABCMeta):
             return tuple(input.strip().split(' '))
         else:
             raise ValueError
+
+    @staticmethod
+    def _check_word(input):
+        if not isinstance(input, str):
+            raise ValueError
+        if ' ' in input:
+            raise ValueError
+
 
     def _replace_unks(self, words):
         return tuple((w if w in self else self._unk) for w in words)

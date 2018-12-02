@@ -15,6 +15,7 @@ class ARPAModelSimple(ARPAModel):
         self._vocabulary_sorted = None
 
     def __contains__(self, word):
+        self._check_word(word)
         return word in self.vocabulary(sort=False)
 
     def add_count(self, order, count):
