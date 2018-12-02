@@ -3,6 +3,8 @@ sudo: required
 
 language: python
 
+cache: pip
+
 python:
   - 3.4
   - 3.5
