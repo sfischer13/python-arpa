@@ -1,11 +1,10 @@
-=======
 Credits
 =======
 
 Development Lead
 ----------------
 
-* Stefan Fischer <sfischer13@ymail.com>
+-   Stefan Fischer <[sfischer13@ymail.com](mailto:sfischer13@ymail.com)>
 
 Contributors
 ------------
