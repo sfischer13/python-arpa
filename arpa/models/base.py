@@ -57,10 +57,10 @@ class ARPAModel(metaclass=ABCMeta):
         return result
 
     def p(self, ngram):
-        return self._base ** self.log_p(ngram)
+        return self._base**self.log_p(ngram)
 
     def s(self, sentence):
-        return self._base ** self.log_s(sentence)
+        return self._base**self.log_s(sentence)
 
     @abstractmethod
     def counts(self):  # pragma: no cover
