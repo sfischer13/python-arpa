@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 """
-This is a library for reading ARPA n-gram models.
+Library for reading ARPA n-gram models.
 
 The package may be imported directly::
 
