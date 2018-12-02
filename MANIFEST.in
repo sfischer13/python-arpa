@@ -7,15 +7,21 @@ include requirements.txt
 include requirements_dev.txt
 include .coveragerc
 include .editorconfig
+include .flake8
+include .style.yapf
+include Pipfile
+include Pipfile.lock
 
 recursive-include arpa *.py
 
 include docs/conf.py
 include docs/Makefile
 include docs/make.bat
+recursive-include docs *.md
 recursive-include docs *.rst
 
 recursive-include tests *
+recursive-exclude tests *.arpa
 
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
