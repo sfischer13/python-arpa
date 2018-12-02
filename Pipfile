@@ -12,7 +12,7 @@ nltk = "*"
 pyroma = "*"
 pytest = "*"
 pytest-runner = "*"
-readme_renderer = "*"
+readme_renderer = {extras = ["md"],version = "*"}
 recommonmark = "*"
 sphinx = "*"
 yapf = "*"
