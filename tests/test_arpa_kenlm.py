@@ -7,13 +7,13 @@ import kenlm
 
 import nltk
 
+from test_arpa import PARSERS
+from test_arpa import TEST_ARPA
+
 MAX_ORDER = 5
 N_QUERIES = 10
 N_SENTENCES = 10
 
-PARSERS = [None, 'quick']
-
-TEST_ARPA = os.path.join(os.path.dirname(__file__), 'data/test.arpa')
 WORDS = list(nltk.corpus.PlaintextCorpusReader('/usr/share/dict', 'words').words())
 
 
