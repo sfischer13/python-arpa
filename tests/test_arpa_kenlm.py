@@ -7,10 +7,11 @@ import kenlm
 
 import nltk
 
-
 MAX_ORDER = 5
 N_QUERIES = 10
 N_SENTENCES = 10
+
+PARSERS = [None, 'quick']
 
 TEST_ARPA = os.path.join(os.path.dirname(__file__), 'data/test.arpa')
 WORDS = list(nltk.corpus.PlaintextCorpusReader('/usr/share/dict', 'words').words())
@@ -22,16 +23,17 @@ def test_log_p_random():
 
 
 def _test_log_p(queries):
-    lm_me = arpa.loadf(TEST_ARPA)[0]
     lm_ken = kenlm.LanguageModel(TEST_ARPA)
-    results_me = []
-    results_ken = []
-    for ngram in queries:
-        prob_me = lm_me.log_p(ngram)
-        prob_ken = list(lm_ken.full_scores(' '.join(ngram), False, False))[-1][0]
-        results_me.append(prob_me)
-        results_ken.append(prob_ken)
-    assert all(round(m - k, 4) == 0 for m, k in zip(results_me, results_ken))
+    for p in PARSERS:
+        lm_me = arpa.loadf(TEST_ARPA, parser=p)[0]
+        results_me = []
+        results_ken = []
+        for ngram in queries:
+            prob_me = lm_me.log_p(ngram)
+            prob_ken = list(lm_ken.full_scores(' '.join(ngram), False, False))[-1][0]
+            results_me.append(prob_me)
+            results_ken.append(prob_ken)
+        assert all(round(m - k, 4) == 0 for m, k in zip(results_me, results_ken))
 
 
 def _random_ngram(length):
@@ -61,16 +63,17 @@ def test_log_s_random_sos_eos():
 
 
 def _test_log_s(sentences, sos, eos):
-    lm_me = arpa.loadf(TEST_ARPA)[0]
     lm_ken = kenlm.LanguageModel(TEST_ARPA)
-    results_me = []
-    results_ken = []
-    for sentence in sentences:
-        score_me = lm_me.log_s(sentence, sos=sos, eos=eos)
-        score_ken = lm_ken.score(sentence, bool(sos), bool(eos))
-        results_me.append(score_me)
-        results_ken.append(score_ken)
-    assert all(round(m - k, 2) == 0 for m, k in zip(results_me, results_ken))
+    for p in PARSERS:
+        lm_me = arpa.loadf(TEST_ARPA, parser=p)[0]
+        results_me = []
+        results_ken = []
+        for sentence in sentences:
+            score_me = lm_me.log_s(sentence, sos=sos, eos=eos)
+            score_ken = lm_ken.score(sentence, bool(sos), bool(eos))
+            results_me.append(score_me)
+            results_ken.append(score_ken)
+        assert all(round(m - k, 2) == 0 for m, k in zip(results_me, results_ken))
 
 
 def _random_sentences():
