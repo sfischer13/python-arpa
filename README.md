@@ -1,18 +1,19 @@
 Python ARPA Package
 ===================
 
-[![PyPI Version](https://img.shields.io/pypi/v/arpa.svg)](https://pypi.python.org/pypi/arpa) [![Travis](https://img.shields.io/travis/sfischer13/python-arpa.svg)](https://travis-ci.org/sfischer13/python-arpa) [![Coverage Status](https://coveralls.io/repos/sfischer13/python-arpa/badge.svg?branch=master&service=github)](https://coveralls.io/github/sfischer13/python-arpa?branch=master)
+[![PyPI Version](https://img.shields.io/pypi/v/arpa.svg)](https://pypi.python.org/pypi/arpa) [![Documentation Status](https://readthedocs.org/projects/arpa/badge/?version=latest)](https://arpa.readthedocs.io/en/latest/?badge=latest) [![Travis](https://img.shields.io/travis/sfischer13/python-arpa.svg)](https://travis-ci.org/sfischer13/python-arpa) [![Coverage Status](https://coveralls.io/repos/sfischer13/python-arpa/badge.svg?branch=master&service=github)](https://coveralls.io/github/sfischer13/python-arpa?branch=master)
 
-This is a library for reading ARPA n-gram models.  
+Python library for reading ARPA n-gram models.  
 It was initiated by Stefan Fischer and is developed and maintained by many others.
 
--   [Questions](mailto:sfischer13@ymail.com) can be asked via e-mail.
--   [Source code](http://github.com/sfischer13/python-arpa) is tracked on GitHub.
+-   [Documentation](https://readthedocs.org/projects/arpa/badge/?version=latest) is available.
 -   [Changes](https://github.com/sfischer13/python-arpa/blob/master/HISTORY.md) between releases are documented.
 -   [Bugs](https://github.com/sfischer13/python-arpa/issues) can be reported on the issue tracker.
+-   [Questions](mailto:sfischer13@ymail.com) can be asked via e-mail.
+-   [Source code](http://github.com/sfischer13/python-arpa) is tracked on GitHub.
 
-Install
--------
+Setup
+-----
 
 [![PyPI Python Versions](https://img.shields.io/pypi/pyversions/arpa.svg)](https://pypi.python.org/pypi/arpa)
 
@@ -20,8 +21,8 @@ The package is available on [PyPI](https://pypi.python.org/pypi/arpa):
 
     $ pip install arpa
 
-Use
----
+Usage
+-----
 
 The package may be imported directly:
 
