@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-import sys
-
 try:
     from setuptools import setup
 except ImportError:
@@ -12,8 +10,6 @@ with open('README.md') as readme_file:
 
 with open('HISTORY.md') as history_file:
     history = history_file.read()
-
-requirements = []
 
 setup(
     author='Stefan Fischer',
@@ -43,7 +39,7 @@ setup(
     ],
     description='Library for reading ARPA n-gram models.',
     include_package_data=True,
-    install_requires=requirements,
+    install_requires=[],
     keywords='ARPA n-gram ngram language model LM language technology LT '
     'computational linguistics CL natural language processing NLP unigram bigram trigram',
     license='MIT',
