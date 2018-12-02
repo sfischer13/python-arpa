@@ -13,6 +13,7 @@ pyroma = "*"
 pytest = "*"
 pytest-runner = "*"
 readme_renderer = "*"
+recommonmark = "*"
 sphinx = "*"
 yapf = "*"
 
