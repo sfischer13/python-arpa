@@ -21,11 +21,23 @@ def test_manual_p():
 def test_manual_contains():
     lm = arpa.loadf(TEST_ARPA)[0]
     assert 'foo' in lm
+    with pytest.raises(ValueError):
+        assert ('foo', ) in lm
+    with pytest.raises(ValueError):
+        assert 'a little' in lm
+    with pytest.raises(ValueError):
+        assert ('a', 'little') in lm
 
 
 def test_new_model_contains_not():
     lm = ARPAModelSimple()
     assert 'foo' not in lm
+    with pytest.raises(ValueError):
+        assert ('foo', ) not in lm
+    with pytest.raises(ValueError):
+        assert 'a little' not in lm
+    with pytest.raises(ValueError):
+        assert ('a', 'little') not in lm
 
 
 def test_new_model_counts():
