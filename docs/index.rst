@@ -10,6 +10,7 @@ Documentation for Python :mod:`arpa`
    :maxdepth: 2
    :caption: Contents:
 
+   setup
    examples
    api
 
