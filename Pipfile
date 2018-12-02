@@ -4,12 +4,17 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+check-manifest = "*"
 coveralls = "*"
+flake8 = "*"
 kenlm = {git = "git://github.com/kpu/kenlm.git"}
 nltk = "*"
+pyroma = "*"
 pytest = "*"
 pytest-runner = "*"
-Sphinx = "*"
+readme_renderer = "*"
+sphinx = "*"
+yapf = "*"
 
 [packages]
 

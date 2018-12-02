@@ -1,7 +1,12 @@
+check-manifest==0.37
 coveralls==1.5.1
+flake8==3.6.0
 git+git://github.com/kpu/kenlm.git@a1fcd16#egg=kenlm==0.0.1
 nltk==3.4
-pytest==4.0.1
+pyroma==2.4
 pytest-runner==4.2
+pytest==4.0.1
+readme_renderer==24.0
 setuptools==40.6.2
-Sphinx==1.8.2
+sphinx==1.8.2
+yapf==0.25.0
