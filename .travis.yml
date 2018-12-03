@@ -20,7 +20,7 @@ matrix:
 install:
   - pip install .
   - if [[ $TRAVIS_PYTHON_VERSION != 3.7 ]]; then pip install -r requirements.txt && pip install -r requirements_dev.txt; fi
-  - if [[ $TRAVIS_PYTHON_VERSION == 3.7 ]]; then pip install pipenv && pipenv sync --dev; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.7 ]]; then pip install -U pipenv==2018.11.26 && pipenv sync --dev; fi
 
 before_script:
   - cd tests/data && ./download.sh && cd ../..
