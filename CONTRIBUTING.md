@@ -3,67 +3,86 @@ Contributing
 
 Contributions are welcome!
 
-Format code:
+Dependencies
+------------
+
+```sh
+pipenv check
+pipenv update
+pipenv update --dev
+```
+
+```sh
+vim requirements.txt
+vim requirements_dev.txt
+```
+
+Version
+-------
+
+-   `__init__.py`
+    -   `__date__`
+    -   `__version__`
+-   `setup.py`
+    -   `version`
+-   `docs/conf.py`
+    -   `release`
+    -   `version`
+-   `CONTRIBUTING.md`
+    -   `__date__`
+-   `HISTORY.md`
+
+Format
+------
 
 ```sh
 yapf -e docs/conf.py -i -r .
 ```
 
-Check code style:
-
 ```sh
 flake8 .
 ```
 
-Build documentation:
+Documentation
+-------------
 
 ```sh
 cd docs
 make html
 ```
 
-Build and check documentation:
-
 ```sh
 cd docs
 sphinx-build -nWT -b html -d _build/doctrees . _build/html
 ```
 
-Run tests:
-
-```sh
-python setup.py test
-```
-
-Check MANIFEST.in:
+Packaging
+---------
 
 ```sh
 check-manifest -v
 ```
 
-Run pyroma:
-
 ```sh
 pyroma .
 ```
 
-Bump version:
+Tests
+-----
 
--   `__init__.py`
-    -   `__version__`
--   `setup.py`
-    -   `version`
--   `docs/conf.py`
-    -   `version`
-    -   `release`
--   `HISTORY.md`
+```sh
+python setup.py test
+```
 
-Make release:
+Release
+-------
 
 ```sh
 python setup.py check
+
 python setup.py sdist
 python setup.py bdist_wheel
+
 twine check
 twine upload dist/*
 ```
