@@ -15,6 +15,7 @@ pytest-runner = "*"
 readme_renderer = {extras = ["md"],version = "*"}
 recommonmark = "*"
 sphinx = "*"
+twine = "*"
 yapf = "*"
 
 [packages]

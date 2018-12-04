@@ -9,4 +9,5 @@ pytest==4.0.1
 readme_renderer[md]==24.0
 recommonmark==0.4.0
 sphinx==1.8.2
+twine==1.12.1
 yapf==0.25.0
