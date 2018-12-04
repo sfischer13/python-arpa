@@ -3,16 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Documentation for Python :mod:`arpa`
-====================================
+Python :mod:`arpa` package
+==========================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    setup
    examples
-   api
+   arpa
 
 
 Indices and tables

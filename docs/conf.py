@@ -182,3 +182,9 @@ epub_exclude_files = ['search.html']
 
 
 # -- Extension configuration -------------------------------------------------
+
+nitpick_ignore = [
+    ('py:class', 'Exception'),
+    ('py:class', 'enum.Enum'),
+    ('py:class', 'object'),
+]
