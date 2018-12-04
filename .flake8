@@ -1,2 +1,2 @@
 [flake8]
-exclude = .svn,CVS,.bzr,.hg,.git,__pycache__,.tox,.eggs,*.egg,docs/conf.py
+exclude = .svn,CVS,.bzr,.hg,.git,__pycache__,.tox,.eggs,*.egg,build,docs/conf.py
