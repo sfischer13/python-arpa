@@ -7,6 +7,10 @@ Dependencies
 ------------
 
 ```sh
+pipenv --rm
+pipenv sync
+pipenv sync --dev
+
 pipenv check
 pipenv update
 pipenv update --dev
@@ -36,11 +40,11 @@ Format
 ------
 
 ```sh
-yapf -e docs/conf.py -i -r .
+pipenv run yapf -e docs/conf.py -i -r .
 ```
 
 ```sh
-flake8 .
+pipenv run flake8 .
 ```
 
 Documentation
@@ -48,41 +52,42 @@ Documentation
 
 ```sh
 cd docs
-make html
+pipenv run make html
 ```
 
 ```sh
 cd docs
-sphinx-build -nWT -b html -d _build/doctrees . _build/html
+pipenv run sphinx-build -nWT -b html -d _build/doctrees . _build/html
 ```
 
 Packaging
 ---------
 
 ```sh
-check-manifest -v
+pipenv run check-manifest -v
 ```
 
 ```sh
-pyroma .
+pipenv run pyroma .
 ```
 
 Tests
 -----
 
 ```sh
-python setup.py test
+pipenv run python setup.py test
 ```
 
 Release
 -------
 
 ```sh
-python setup.py check
+pipenv run python setup.py check
 
-python setup.py sdist
-python setup.py bdist_wheel
+pipenv run python setup.py sdist
+pipenv run python setup.py bdist_wheel
 
-twine check
-twine upload dist/*
+pipenv run twine check dist/*
+
+pipenv run twine upload dist/*
 ```
