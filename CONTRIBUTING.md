@@ -51,6 +51,11 @@ Documentation
 
 ```sh
 cd docs
+pipenv run sphinx-apidoc -f -o . ../arpa
+```
+
+```sh
+cd docs
 pipenv run make html
 ```
 
