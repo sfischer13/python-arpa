@@ -34,7 +34,7 @@ Details about the ARPA n-gram format can be found here:
 The library was initiated by Stefan Fischer and is developed and maintained by many others.
 """
 
-from .arpa import dump, dumpf, dumps, load, loadf, loads
+from .api import dump, dumpf, dumps, load, loadf, loads
 
 __all__ = ['dump', 'dumpf', 'dumps', 'load', 'loadf', 'loads']
 
