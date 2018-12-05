@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 
+import sys
+
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
+
+if not ((3, 4) <= sys.version_info < (4, 0)):
+    print('ERROR: Python 3.4+ is required!')
+    sys.exit(1)
 
 with open('README.md') as readme_file:
     readme = readme_file.read()
