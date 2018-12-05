@@ -10,7 +10,7 @@ It was initiated by Stefan Fischer and is developed and maintained by many other
 -   [Changes](https://github.com/sfischer13/python-arpa/blob/master/HISTORY.md) between releases are documented.
 -   [Bugs](https://github.com/sfischer13/python-arpa/issues) can be reported on the issue tracker.
 -   [Questions](mailto:sfischer13@ymail.com) can be asked via e-mail.
--   [Source code](http://github.com/sfischer13/python-arpa) is tracked on GitHub.
+-   [Source code](https://github.com/sfischer13/python-arpa) is tracked on GitHub.
 
 Setup
 -----
