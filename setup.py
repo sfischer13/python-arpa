@@ -46,8 +46,8 @@ setup(
     description='Library for reading ARPA n-gram models.',
     include_package_data=True,
     install_requires=[],
-    keywords='ARPA n-gram ngram language model LM language technology LT '
-    'computational linguistics CL natural language processing NLP unigram bigram trigram',
+    keywords='ARPA,n-gram,ngram,language model,LM,language technology,LT,'
+    'computational linguistics,CL,natural language processing,NLP,unigram,bigram,trigram',
     license='MIT',
     long_description=readme + '\n\n' + history,
     long_description_content_type='text/markdown',
