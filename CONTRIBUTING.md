@@ -64,6 +64,11 @@ Packaging
 ---------
 
 ```sh
+git clean -dxn
+git clean -dxf
+```
+
+```sh
 pipenv run check-manifest -v
 ```
 
