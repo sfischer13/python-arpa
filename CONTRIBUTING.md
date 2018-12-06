@@ -24,16 +24,15 @@ vim requirements_dev.txt
 Version
 -------
 
--   `__init__.py`
+-   `arpa/__init__.py`
     -   `__date__`
     -   `__version__`
--   `setup.py`
-    -   `version`
 -   `docs/conf.py`
     -   `release`
     -   `version`
--   `CONTRIBUTING.md`
-    -   `__date__`
+-   `setup.py`
+    -   `version`
+-   `AUTHORS.md`
 -   `HISTORY.md`
 
 Format
