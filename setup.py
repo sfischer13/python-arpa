@@ -54,6 +54,11 @@ setup(
     name='arpa',
     package_dir={'arpa': 'arpa'},
     packages=['arpa'],
+    project_urls={
+        'bug tracker': 'https://github.com/sfischer13/python-arpa/issues/',
+        'documentation': 'https://arpa.readthedocs.io/',
+        'source code': 'https://github.com/sfischer13/python-arpa/',
+    },
     python_requires='~=3.4',
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
