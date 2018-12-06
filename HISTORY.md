@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).  
 You should [Keep a CHANGELOG](https://keepachangelog.com/), too!
 
-[Next Release](https://github.com/sfischer13/python-arpa/compare/0.1.0b2...HEAD)
+[Next Release](https://github.com/sfischer13/python-arpa/compare/0.1.0b3...HEAD)
 --------------------------------------------------------------------------------
 
 ### Added
@@ -19,6 +19,9 @@ You should [Keep a CHANGELOG](https://keepachangelog.com/), too!
 ### Removed
 
 ### Security
+
+[0.1.0b3](https://github.com/sfischer13/python-arpa/compare/0.1.0b2...0.1.0b3) - 2018-12-06
+-------------------------------------------------------------------------------------------
 
 [0.1.0b2](https://github.com/sfischer13/python-arpa/compare/0.1.0b1...0.1.0b2) - 2018-04-28
 -------------------------------------------------------------------------------------------

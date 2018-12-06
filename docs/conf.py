@@ -25,7 +25,7 @@ author = 'Stefan Fischer'
 # The short X.Y version
 version = '0.1'
 # The full version, including alpha/beta/rc tags
-release = '0.1.0b2'
+release = '0.1.0b3'
 
 
 # -- General configuration ---------------------------------------------------

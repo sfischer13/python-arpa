@@ -58,6 +58,6 @@ setup(
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
     url='https://github.com/sfischer13/python-arpa',
-    version='0.1.0b2',
+    version='0.1.0b3',
     zip_safe=False,
 )
