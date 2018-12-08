@@ -22,6 +22,7 @@ recursive-include docs *.rst
 
 recursive-include tests *
 recursive-exclude tests *.arpa
+recursive-exclude tests *.arpa.*
 
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]

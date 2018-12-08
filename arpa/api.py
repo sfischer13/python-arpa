@@ -1,3 +1,5 @@
+import gzip
+
 from io import StringIO
 
 from .models.simple import ARPAModelSimple
@@ -10,9 +12,16 @@ def dump(obj, fp):
 
 
 def dumpf(obj, path, mode='wt', encoding=None):
-    """Serialize obj to path in ARPA format."""
-    with open(path, mode=mode, encoding=encoding) as f:
-        dump(obj, f)
+    """Serialize obj to path in ARPA format (.arpa, .gz)."""
+    path = str(path)
+    if path.endswith('.gz'):
+        if (mode is None) or ('t' not in mode):
+            raise ValueError('Compressed files must use text mode.')
+        with gzip.open(path, mode=mode, encoding=encoding) as f:
+            return dump(obj, f)
+    else:
+        with open(path, mode=mode, encoding=encoding) as f:
+            dump(obj, f)
 
 
 def dumps(obj):
@@ -41,9 +50,16 @@ def load(fp, model=None, parser=None):
 
 
 def loadf(path, mode='rt', encoding=None, model=None, parser=None):
-    """Deserialize path (a text file) to a Python object."""
-    with open(path, mode=mode, encoding=encoding) as f:
-        return load(f, model=model, parser=parser)
+    """Deserialize path (.arpa, .gz) to a Python object."""
+    path = str(path)
+    if path.endswith('.gz'):
+        if (mode is None) or ('t' not in mode):
+            raise ValueError('Compressed files must use text mode.')
+        with gzip.open(path, mode=mode, encoding=encoding) as f:
+            return load(f, model=model, parser=parser)
+    else:
+        with open(path, mode=mode, encoding=encoding) as f:
+            return load(f, model=model, parser=parser)
 
 
 def loads(s, model=None, parser=None):
