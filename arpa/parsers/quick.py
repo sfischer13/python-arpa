@@ -80,8 +80,8 @@ class ARPAParserQuick(ARPAParser):
         if match:
             p = self._float_or_int(match.group(1))
             ngram = tuple(match.group(4).split(' '))
-            bo = match.group(7)
-            bo = self._float_or_int(bo) if bo else None
+            bo_match = match.group(7)
+            bo = self._float_or_int(bo_match) if bo_match else None
             self._tmp_model.add_entry(ngram, p, bo, self._tmp_order)
         elif not line:
             self._state = self.State.HEADER  # last entry
