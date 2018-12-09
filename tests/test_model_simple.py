@@ -8,7 +8,7 @@ def test_new_model_contains_not():
 
 def test_new_model_contains():
     lm = ARPAModelSimple()
-    lm.add_entry(['foo'], 1.0)
+    lm.add_entry(('foo', ), 1.0)
     assert 'foo' in lm
 
 
