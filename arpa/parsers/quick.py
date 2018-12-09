@@ -64,7 +64,7 @@ class ARPAParserQuick(ARPAParser):
         match = self.re_header.match(line)
         if match:
             self._state = self.State.ENTRY
-            self._tmp_order = match.group(1)
+            self._tmp_order = int(match.group(1))
         elif line == '\\end\\':
             self._result.append(self._tmp_model)
             self._state = self.State.DATA
