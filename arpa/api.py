@@ -11,16 +11,14 @@ def dump(obj, fp):
     obj.write(fp)
 
 
-def dumpf(obj, path, mode='wt', encoding=None):
+def dumpf(obj, path, encoding=None):
     """Serialize obj to path in ARPA format (.arpa, .gz)."""
     path = str(path)
     if path.endswith('.gz'):
-        if (mode is None) or ('t' not in mode):
-            raise ValueError('Compressed files must use text mode.')
-        with gzip.open(path, mode=mode, encoding=encoding) as f:
+        with gzip.open(path, mode='wt', encoding=encoding) as f:
             return dump(obj, f)
     else:
-        with open(path, mode=mode, encoding=encoding) as f:
+        with open(path, mode='wt', encoding=encoding) as f:
             dump(obj, f)
 
 
@@ -49,16 +47,14 @@ def load(fp, model=None, parser=None):
         raise ValueError
 
 
-def loadf(path, mode='rt', encoding=None, model=None, parser=None):
+def loadf(path, encoding=None, model=None, parser=None):
     """Deserialize path (.arpa, .gz) to a Python object."""
     path = str(path)
     if path.endswith('.gz'):
-        if (mode is None) or ('t' not in mode):
-            raise ValueError('Compressed files must use text mode.')
-        with gzip.open(path, mode=mode, encoding=encoding) as f:
+        with gzip.open(path, mode='rt', encoding=encoding) as f:
             return load(f, model=model, parser=parser)
     else:
-        with open(path, mode=mode, encoding=encoding) as f:
+        with open(path, mode='rt', encoding=encoding) as f:
             return load(f, model=model, parser=parser)
 
 
