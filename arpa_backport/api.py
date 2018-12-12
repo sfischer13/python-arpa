@@ -60,6 +60,7 @@ def loadf(path, encoding=None, model=None, parser=None):
     path = str(path)
     if path.endswith('.gz'):
         with gzip.open(path, mode='rb') as f:
+            f.read1 = f.read  # bug fix: https://bugs.python.org/issue12591
             with TextIOWrapper(f, encoding=encoding) as g:
                 return load(g, model=model, parser=parser)
     else:
