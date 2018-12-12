@@ -7,6 +7,7 @@ import gzip
 
 from io import open
 from io import StringIO
+from io import TextIOWrapper
 
 from .models.simple import ARPAModelSimple
 from .parsers.quick import ARPAParserQuick
@@ -21,8 +22,9 @@ def dumpf(obj, path, encoding=None):
     """Serialize obj to path in ARPA format (.arpa, .gz)."""
     path = str(path)
     if path.endswith('.gz'):
-        with gzip.open(path, mode='wt', encoding=encoding) as f:
-            return dump(obj, f)
+        with gzip.open(path, mode='wt') as f:
+            with TextIOWrapper(f, encoding=encoding) as g:
+                return dump(obj, g)
     else:
         with open(path, mode='wt', encoding=encoding) as f:
             dump(obj, f)
@@ -57,8 +59,9 @@ def loadf(path, encoding=None, model=None, parser=None):
     """Deserialize path (.arpa, .gz) to a Python object."""
     path = str(path)
     if path.endswith('.gz'):
-        with gzip.open(path, mode='rt', encoding=encoding) as f:
-            return load(f, model=model, parser=parser)
+        with gzip.open(path, mode='rb') as f:
+            with TextIOWrapper(f, encoding=encoding) as g:
+                return load(g, model=model, parser=parser)
     else:
         with open(path, mode='rt', encoding=encoding) as f:
             return load(f, model=model, parser=parser)
