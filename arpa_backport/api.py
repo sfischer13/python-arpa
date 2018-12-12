@@ -3,6 +3,8 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import gzip
+
 from io import open
 from io import StringIO
 
@@ -15,10 +17,15 @@ def dump(obj, fp):
     obj.write(fp)
 
 
-def dumpf(obj, path, mode='wt', encoding=None):
-    """Serialize obj to path in ARPA format."""
-    with open(path, mode=mode, encoding=encoding) as f:
-        dump(obj, f)
+def dumpf(obj, path, encoding=None):
+    """Serialize obj to path in ARPA format (.arpa, .gz)."""
+    path = str(path)
+    if path.endswith('.gz'):
+        with gzip.open(path, mode='wt', encoding=encoding) as f:
+            return dump(obj, f)
+    else:
+        with open(path, mode='wt', encoding=encoding) as f:
+            dump(obj, f)
 
 
 def dumps(obj):
@@ -46,10 +53,15 @@ def load(fp, model=None, parser=None):
         raise ValueError
 
 
-def loadf(path, mode='rt', encoding=None, model=None, parser=None):
-    """Deserialize path (a text file) to a Python object."""
-    with open(path, mode=mode, encoding=encoding) as f:
-        return load(f, model=model, parser=parser)
+def loadf(path, encoding=None, model=None, parser=None):
+    """Deserialize path (.arpa, .gz) to a Python object."""
+    path = str(path)
+    if path.endswith('.gz'):
+        with gzip.open(path, mode='rt', encoding=encoding) as f:
+            return load(f, model=model, parser=parser)
+    else:
+        with open(path, mode='rt', encoding=encoding) as f:
+            return load(f, model=model, parser=parser)
 
 
 def loads(s, model=None, parser=None):

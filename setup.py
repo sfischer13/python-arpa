@@ -60,10 +60,15 @@ setup(
     name='arpa-backport',
     package_dir={'arpa_backport': 'arpa_backport'},
     packages=['arpa_backport'],
+    project_urls={
+        'bug tracker': 'https://github.com/sfischer13/python-arpa/issues/',
+        'documentation': 'https://arpa.readthedocs.io/',
+        'source code': 'https://github.com/sfischer13/python-arpa/',
+    },
     python_requires='~=2.7',
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
     url='https://github.com/sfischer13/python-arpa',
-    version='0.1.0b3',
-    zip_safe=False,
+    version='0.1.0b4',
+    zip_safe=True,
 )

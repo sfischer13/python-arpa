@@ -29,10 +29,9 @@ class ARPAModelSimple(ARPAModel):
     def add_entry(self, ngram, p, bo=None, order=None):
         if self._vocabulary is not None:
             raise FrozenException
-        key = tuple(ngram)
-        self._ps[key] = p
+        self._ps[ngram] = p
         if bo is not None:
-            self._bos[key] = bo
+            self._bos[ngram] = bo
 
     def counts(self):
         return sorted(self._counts.items())

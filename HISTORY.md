@@ -20,6 +20,9 @@ You should [Keep a CHANGELOG](https://keepachangelog.com/), too!
 
 ### Security
 
+[0.1.0b4](https://github.com/sfischer13/python-arpa/compare/0.1.0b3-py2...0.1.0b4-py2) - 2018-12-12
+---------------------------------------------------------------------------------------------------
+
 [0.1.0b3](https://github.com/sfischer13/python-arpa/compare/0.1.0b3...0.1.0b3-py2) - 2018-12-06
 -----------------------------------------------------------------------------------------------
 

@@ -8,11 +8,10 @@ Documentation for Python :mod:`arpa_backport`
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    setup
    examples
-   api
+   arpa_backport
 
 
 Indices and tables

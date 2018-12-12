@@ -11,6 +11,12 @@ class ARPAException(Exception):
     pass
 
 
+class FatalException(ARPAException):
+    """This should not have happened."""
+
+    pass
+
+
 class FrozenException(ARPAException):
     """Language model is frozen."""
 
