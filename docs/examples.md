@@ -2,7 +2,8 @@
 
 **NOTE:**
 
-Like its Python 3 equivalent, this library uses *unicode strings*.  
+Like its Python 3 equivalent, this library uses *unicode strings*.
+
 Using *byte strings* (``str``) will cause an *exception*.
 
 ```python
