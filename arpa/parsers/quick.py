@@ -18,7 +18,7 @@ class ARPAParserQuick(ARPAParser):
     re_entry = re.compile('^(-?\\d+(\\.\\d+)?([eE]-?\\d+)?)'
                           '\t'
                           '(\\S+( \\S+)*)'
-                          '(\t(-?\\d+(\\.\\d+)?)([eE]-?\\d+)?)?$')
+                          '(\t((-?\\d+(\\.\\d+)?)([eE]-?\\d+)?))?$')
 
     def __init__(self, model):
         self.ModelClass = model
